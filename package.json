@@ -30,6 +30,7 @@
     "@rive-app/react-canvas": "^4.13.3",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.12",
+    "aplayer-react": "^1.6.0",
     "autoprefixer": "^10.4.13",
     "contentlayer2": "0.4.6",
     "esbuild": "0.20.2",
