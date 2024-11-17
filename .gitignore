@@ -10,7 +10,7 @@
 !/.yarn/sdks
 # testing
 /coverage
-/data/blog/*
+# /data/blog/*
 # next.js
 /.next/
 /out/
