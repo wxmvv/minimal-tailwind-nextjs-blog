@@ -1,0 +1,27 @@
+/* .title {
+  color: var(--titleColor);
+  font-size: 28px;
+  text-align: left;
+}
+
+@media only screen and (max-width: 600px) {
+  .title {
+    width: 100%;
+    text-align: center;
+  }
+} */
+
+.title {
+  color: var(--titleColor);
+  font-size: 18px;
+  text-align: left;
+  width: 100%;
+  text-align: center;
+}
+
+/* @media only screen and (max-width: 600px) {
+  .title {
+    width: 100%;
+    text-align: center;
+  }
+} */

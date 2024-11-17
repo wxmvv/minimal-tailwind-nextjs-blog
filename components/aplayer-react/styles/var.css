@@ -1,0 +1,45 @@
+:root {
+  --aplayer-title: #000;
+  --aplayer-author: #666;
+  --aplayer-time: #999;
+  --aplayer-icon: #666;
+  --aplayer-icon-hover: #000;
+  --aplayer-body: #fff;
+  --aplayer: #fff;
+  /* 未选中item hover */
+  --aplayer-list-hover: #e9e9e9;
+  /* list选中状态 */
+  --aplayer-list-light: #e9e9e9;
+  --aplayer-list-index: #666;
+  --aplayer-list-author: #666;
+  --aplayer-list-title: #000;
+  --aplayer-list-scrollbar-thumb: #eee;
+  --aplayer-list-scrollbar-thumb-hover: #ccc;
+
+  --miniswitcher: #e6e6e6;
+  --miniswitcher-icon: #666;
+  --miniswitcher-icon-hover: #000;
+}
+
+:root.dark {
+  --aplayer-title: #fff;
+  --aplayer-author: #999;
+  --aplayer-time: #999;
+  --aplayer-icon: #999;
+  --aplayer-icon-hover: #fff;
+  --aplayer-body: #000;
+  --aplayer: #000;
+  /* 未选中item hover */
+  --aplayer-list-hover: #473566;
+  /* list选中状态 */
+  --aplayer-list-light: #473566;
+  --aplayer-list-index: #fff;
+  --aplayer-list-author: #999;
+  --aplayer-list-title: #fff;
+
+  --aplayer-list-scrollbar-thumb: #999;
+  --aplayer-list-scrollbar-thumb-hover: #ccc;
+  --miniswitcher: rgba(255, 255, 255, 0.1);
+  --miniswitcher-icon: #bbb;
+  --miniswitcher-icon-hover: #fff;
+}

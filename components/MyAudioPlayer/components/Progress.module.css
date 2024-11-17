@@ -1,0 +1,78 @@
+/* .container {
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 5px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: var(--progressSlider);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--progressSlider);
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    margin: 40px 0;
+  }
+} */
+
+.container {
+  display: grid;
+  place-items: center;
+  padding-bottom: 10px;
+  /* margin-bottom: 20px; */
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 5px;
+}
+
+/* 进度点 */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--progressSlider);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.slider::-webkit-slider-thumb:hover {
+  width: 20px;
+  height: 20px;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--progressSlider);
+  cursor: pointer;
+}
+
+/* @media only screen and (max-width: 600px) {
+  .container {
+    margin: 20px 20px;
+  }
+} */

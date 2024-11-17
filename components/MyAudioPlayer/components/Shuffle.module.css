@@ -1,0 +1,38 @@
+/* .shuffle {
+  width: 26px;
+  height: 26px;
+  transition: transform 0.2s;
+}
+
+.shuffle:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+@media only screen and (max-width: 600px) {
+  .shuffle {
+    display: none;
+  }
+} */
+
+.shuffle {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s;
+  fill: var(--player-btn);
+}
+.shuffle.disabled {
+  fill: var(--player-btn-disabled);
+}
+
+/* .shuffle:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  fill: var(--player-btn-hover);
+} */
+
+/* @media only screen and (max-width: 600px) {
+  .shuffle {
+    display: none;
+  }
+} */

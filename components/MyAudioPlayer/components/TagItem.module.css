@@ -1,0 +1,54 @@
+/* .tag {
+  background-color: var(--tagsBackground);
+  color: var(--tagsText);
+  height: 40px;
+  min-width: 100px;
+  display: inline-grid;
+  place-items: center;
+  margin: 5px 5px;
+  transition: transform 0.2s;
+  padding: 0 10px;
+  font-family: 'Varela Round', sans-serif;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.active {
+  background-color: var(--tagsBackgroundHoverActive);
+  color: var(--tagsTextHoverActive);
+}
+
+.tag:hover {
+  background-color: var(--tagsBackgroundHoverActive);
+  color: var(--tagsTextHoverActive);
+  cursor: pointer;
+  transform: scale(1.1);
+} */
+
+.tag {
+  background-color: var(--tagsBackground);
+  color: var(--tagsText);
+  height: 30px;
+  /* min-width: 80px; */
+  display: inline-grid;
+  place-items: center;
+  margin: 2px 2px;
+  transition: transform 0.2s;
+  /* padding: 0 10px; */
+  padding: 0 10px;
+  font-family: 'Varela Round', sans-serif;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.active {
+  background-color: var(--tagsBackgroundHoverActive);
+  color: var(--tagsTextHoverActive);
+}
+
+.tag:hover {
+  background-color: var(--tagsBackgroundHoverActive);
+  color: var(--tagsTextHoverActive);
+  cursor: pointer;
+  transform: scale(1.1);
+}

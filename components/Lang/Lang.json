@@ -1,0 +1,36 @@
+{
+  "cn": {
+    "All Post": "所有文章",
+    "Home": "首页",
+    "About": "关于我",
+    "Blog": "博客",
+    "Tags": "标签",
+    "Connect": "联系",
+    "Projects": "项目",
+    "#AllPosts": "#全部文章",
+    "#TagList": "#标签列表",
+    "dark": "黑暗",
+    "light": "亮色",
+    "system": "系统",
+    "Back to homepage": "回到主页",
+    "Sorry we couldn't find this page.": "未知页面",
+    "But dont worry, you can find plenty of other things on our homepage.": "不过别担心，急也没用哦～"
+  },
+  "en": {
+    "All Post": "All Post",
+    "Home": "Home",
+    "About": "About",
+    "Blog": "Blog",
+    "Tags": "Tags",
+    "Connect": "Contact",
+    "Projects": "Projects",
+    "#AllPosts": "#AllPosts",
+    "#TagList": "#TagList",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "Back to homepage": "Back to homepage",
+    "Sorry we couldn't find this page.": "Sorry we couldn't find this page.",
+    "But dont worry, you can find plenty of other things on our homepage.": "But dont worry, you can find plenty of other things on our homepage."
+  }
+}

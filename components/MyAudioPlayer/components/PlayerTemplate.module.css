@@ -1,0 +1,21 @@
+.wrapper {
+  /* border-radius: 10px; */
+  /* display: absolute; */
+  /* height: 180px; */
+  width: 100%;
+  padding: 0px 20px 0px 20px;
+  /* border-radius: 20px; */
+  /* box-shadow: 0 0 0 1px var(--borderColor); */
+  /* border: 1px solid var(--borderColor); */
+  /* margin-bottom: 20px; */
+  background-color: var(--playerBackground);
+  /* background-color: antiquewhite; */
+  /* overflow: auto; */
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* @media only screen and (max-width: 600px) {
+  .wrapper {
+    padding: 0 20px;
+  }
+} */

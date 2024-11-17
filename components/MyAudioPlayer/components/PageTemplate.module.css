@@ -1,0 +1,10 @@
+.pagetemplate {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 2px solid var(--borderColor);
+  display: flex;
+  flex-direction: column;
+  /* box-shadow: 0 0 0px 1px black; */
+}

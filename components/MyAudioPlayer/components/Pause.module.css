@@ -1,0 +1,23 @@
+/* .pause {
+  width: 60px;
+  height: 60px;
+  transition: transform 0.2s;
+}
+
+.pause:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+} */
+
+.pause {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s;
+  fill: var(--player-btn);
+}
+
+.pause:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  fill: var(--player-btn-hover);
+}

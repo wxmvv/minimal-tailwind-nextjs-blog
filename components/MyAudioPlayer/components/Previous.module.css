@@ -1,0 +1,24 @@
+/* .previous {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.2s;
+}
+
+.previous:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+ */
+
+.previous {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s;
+  fill: var(--player-btn);
+}
+
+.previous:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  fill: var(--player-btn-hover);
+}

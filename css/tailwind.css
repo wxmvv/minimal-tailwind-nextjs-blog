@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.task-list-item::before {
+  @apply hidden;
+}
+
+.task-list-item {
+  @apply list-none;
+}
+
+.footnotes {
+  @apply mt-12 border-t border-gray-200 pt-8 dark:border-gray-700;
+}
+
+.data-footnote-backref {
+  @apply no-underline;
+}
+
+.csl-entry {
+  @apply my-5;
+}
+
+/* https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition:
+    background-color 600000s 0s,
+    color 600000s 0s;
+}
+
+.katex-display {
+  overflow: auto hidden;
+}
+
+.content-header-link {
+  opacity: 0;
+  margin-left: -24px;
+  padding-right: 4px;
+}
+
+.content-header:hover .content-header-link,
+.content-header-link:hover {
+  opacity: 1;
+}
+
+.linkicon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* MARK 我的Markdow设置 */
+/* TODO 添加自定义MARKDOWN样式 */
+
+text > p {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.imgDesc > p {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+/* .prose { */
+/* color: aqua; */
+/* } */
+
+h1 {
+  font-weight: 500;
+}
+h2 {
+  font-weight: 500;
+}
+h3 {
+  font-weight: 500;
+}
+time {
+  font-weight: 400;
+}
+span {
+  font-weight: 400;
+}
+p {
+  font-weight: 400;
+}
+
+@layer components {
+  .prose {
+    @apply text-base;
+    p {
+      @apply mb-0 mt-0 pb-0 pt-0 text-base;
+      /* @apply text-base; */
+    }
+    h1 {
+      @apply pb-2 pt-6 text-base;
+    }
+    h2 {
+      @apply pb-1 pt-4 text-base;
+    }
+    h3 {
+      @apply pb-1 pt-2 text-base;
+    }
+    h4 {
+      @apply pt-2 text-base;
+    }
+    h5 {
+      @apply pt-2 text-base;
+    }
+    h6 {
+      @apply pt-1 text-base;
+    }
+    ol,
+    ul,
+    .contains-task-list {
+      @apply mb-6 pl-10 -indent-1;
+    }
+    .task-list-item {
+      @apply -ml-6 mb-1 mt-1 h-auto text-base;
+    }
+    li > input {
+      @apply my-0 mr-0 rounded bg-transparent text-cyan-500;
+    }
+    /* li > input[type="checkbox"]:checked {
+      @apply text-black
+    } */
+    /* marker:text-cyan-500 修改圆点颜色 */
+    li {
+      @apply my-1 text-base marker:text-cyan-500 !important;
+    }
+    li > p {
+      @apply my-1 !important;
+    }
+    strong,
+    em,
+    del {
+      @apply text-base;
+    }
+    a {
+      @apply text-gray-600 underline underline-offset-2 dark:text-gray-400;
+    }
+  }
+  .author.prose {
+    p {
+      @apply mb-0 mt-0 pb-10  text-base;
+      /* @apply text-base; */
+    }
+    p:last-child {
+      @apply mb-0 mt-0 pb-0  text-base;
+      /* @apply text-base; */
+    }
+  }
+}

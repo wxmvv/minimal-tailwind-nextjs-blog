@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* 
+:root {
+  --player-btn: #ffffff;
+  --player-btn-hover: #ffffff;
+  --player-btn-active: #ffffff;
+  --player-btn-disabled: #888888;
+
+  --tagsBackground: #5c6370;
+  --tagsText: #000;
+  --tagsBackgroundHoverActive: #575a77;
+  --tagsTextHoverActive: #ffffff;
+  --searchBackground: #18191f;
+  --searchText: #ffffff;
+  --searchPlaceHolder: #575a77;
+  --playerBackground: #18191f;
+  --titleColor: #ffffff;
+  --timeColor: #ffffff;
+  --progressSlider: #575a77;
+  --progressUsed: #ffffff;
+  --progressLeft: #151616;
+  --bufferLoaded: #1f212b;
+  --volumeSlider: #575a77;
+  --volumeUsed: #ffffff;
+  --volumeLeft: #151616;
+  --playlistBackground: #18191f;
+  --playlistText: #575a77;
+  --playlistBackgroundHoverActive: #18191f;
+  --playlistTextHoverActive: #ffffff;
+} */
+:root {
+  --borderColor: #000;
+  --player-btn: #000000;
+  --player-btn-hover: #000000;
+  --player-btn-active: #000000;
+  --player-btn-disabled: #bbbbbb;
+
+  --tagsBackground: #d6d8db;
+  --tagsText: #000000;
+  --tagsBackgroundHoverActive: #e0e2e8;
+  --tagsTextHoverActive: #000000;
+  --searchBackground: #ffffff;
+  --searchText: #000000;
+  --searchPlaceHolder: #a1a3a7;
+  --playerBackground: #ffffff;
+  --titleColor: #000000;
+  --timeColor: #000000;
+  --progressSlider: #e0e2e8;
+  --progressUsed: #000000;
+  --progressLeft: #e5e5e5;
+  --bufferLoaded: #c9cace;
+  --volumeSlider: #e0e2e8;
+  --volumeUsed: #000000;
+  --volumeLeft: #e5e5e5;
+  --playlistBackground: #ffffff;
+  --playlistText: #a1a3a7;
+  --playlistBackgroundHoverActive: #f5f5f5;
+  --playlistTextHoverActive: #000000;
+}
+
+:root.dark {
+  --borderColor: #999;
+  --player-btn: #ffffff;
+  --player-btn-hover: #ffffff;
+  --player-btn-active: #ffffff;
+  --player-btn-disabled: #888888;
+
+  --tagsBackground: #f3f4f6;
+  --tagsText: #000;
+  --tagsBackgroundHoverActive: #575a77;
+  --tagsTextHoverActive: #ffffff;
+  --searchBackground: #18191f;
+  --searchText: #ffffff;
+  --searchPlaceHolder: #575a77;
+  --playerBackground: #18191f;
+  --titleColor: #ffffff;
+  --timeColor: #ffffff;
+  --progressSlider: #575a77;
+  --progressUsed: #ffffff;
+  --progressLeft: #151616;
+  --bufferLoaded: #1f212b;
+  --volumeSlider: #575a77;
+  --volumeUsed: #ffffff;
+  --volumeLeft: #151616;
+  --playlistBackground: #18191f;
+  --playlistText: #575a77;
+  --playlistBackgroundHoverActive: #18191f;
+  --playlistTextHoverActive: #ffffff;
+}
