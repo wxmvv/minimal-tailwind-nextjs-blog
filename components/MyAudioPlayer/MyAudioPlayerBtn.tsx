@@ -111,7 +111,7 @@ const MyPlayer = () => {
     <>
       <div className="fixed -right-5 bottom-0 md:right-12">
         <RiveComponentPlayback
-          className="z-50 h-20 w-20"
+          className="z-30 h-20 w-20"
           // onMouseEnter={() => onMouseEnter()}
           onMouseLeave={() => onMouseLeave()}
           // onClick={() => click()}

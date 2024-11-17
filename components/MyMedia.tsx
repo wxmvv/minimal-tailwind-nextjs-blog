@@ -8,7 +8,7 @@ const MediaPlayer = ({ src }) => {
   const videoRef = useRef<HTMLVideoElement | null>(null)
 
   useEffect(() => {
-    const videoExtensions = ['mp4', 'webm', 'ogg', 'mov']
+    const videoExtensions = ['mp4', 'webm', 'ogg']
     const extension = src?.split('.').pop()?.toLowerCase() || ''
     setIsVideo(videoExtensions.includes(extension))
   }, [src])
