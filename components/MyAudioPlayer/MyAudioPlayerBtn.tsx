@@ -109,38 +109,36 @@ const MyPlayer = () => {
 
   return (
     <>
-      <div className="relative">
-        <div className="fixed -right-5 bottom-0 md:right-12">
-          <RiveComponentPlayback
-            className="z-50 h-20 w-20"
-            // onMouseEnter={() => onMouseEnter()}
-            onMouseLeave={() => onMouseLeave()}
-            // onClick={() => click()}
-            onClick={() => setShowPlayer(!showPlayer)}
-          />
-        </div>
-        <div
-          className="fixed bottom-20 z-50 w-full origin-top-right overflow-hidden"
-          style={{
-            opacity: showPlayer ? 1 : 0,
-            // height: '300px',
-            right: showPlayer ? '30px' : '-330px',
-            transition: 'all 0.3s ease',
-            width: '260px',
-          }}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-        >
-          <Player
-            onPlayingChange={handlePlayingChange}
-            trackList={tracks}
-            includeTags={false}
-            includeSearch={false}
-            showPlaylist={true}
-            sortTracks={false}
-            autoPlayNextTrack={true}
-          />
-        </div>
+      <div className="fixed -right-5 bottom-0 md:right-12">
+        <RiveComponentPlayback
+          className="z-50 h-20 w-20"
+          // onMouseEnter={() => onMouseEnter()}
+          onMouseLeave={() => onMouseLeave()}
+          // onClick={() => click()}
+          onClick={() => setShowPlayer(!showPlayer)}
+        />
+      </div>
+      <div
+        className="fixed bottom-20 z-50 w-full origin-top-right overflow-hidden"
+        style={{
+          opacity: showPlayer ? 1 : 0,
+          // height: '300px',
+          right: showPlayer ? '30px' : '-330px',
+          transition: 'all 0.3s ease',
+          width: '260px',
+        }}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+      >
+        <Player
+          onPlayingChange={handlePlayingChange}
+          trackList={tracks}
+          includeTags={false}
+          includeSearch={false}
+          showPlaylist={true}
+          sortTracks={false}
+          autoPlayNextTrack={true}
+        />
       </div>
     </>
   )
