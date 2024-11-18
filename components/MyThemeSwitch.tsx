@@ -76,7 +76,7 @@ const ThemeSwitch = ({ isDown = false }: ThemeSwitchProps) => {
   }
 
   return (
-    <div className="mr-5">
+    <div className="">
       <Menu as="div" className="relative inline-block text-left">
         {/* <div className="hover:text-primary-500 dark:hover:text-primary-400"> */}
         <MenuButton className="hover:text-primary-500 dark:hover:text-primary-400">

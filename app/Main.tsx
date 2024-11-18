@@ -16,6 +16,7 @@ import LangSwitch from '@/components/Lang/LangSwitch'
 import { useLang } from '@/components/Lang/index'
 import { AnimatePresence, motion } from 'framer-motion'
 import { containerVariants, itemVariants } from '@/components/MyMotion'
+import TypingAnimation from '@/components/TypingAnimation'
 
 const MAX_DISPLAY = 8
 
@@ -112,26 +113,25 @@ export default function Home({ posts }) {
           variants={containerVariants}
         >
           {/* MARK 这里是 author 和 desc 标题栏*/}
-          <motion.div variants={itemVariants} className="flex w-full flex-col gap-1">
-            <div className="relative inline-block w-fit">
+          <motion.div variants={itemVariants} className="z-20 flex w-full flex-col gap-1">
+            <div className="relative inline-flex w-fit gap-2">
               <h1 className="inline-block font-extrabold text-gray-900 dark:text-gray-100">
                 {siteMetadata.author}
               </h1>
-              {headerTitleBtn.ThemeSwitch && (
-                <div className="absolute -right-14 top-0">
-                  <ThemeSwitch isDown={true} />
-                </div>
-              )}
-            </div>
-            <h2>
               <span className="font-semibold text-gray-900 dark:text-gray-100">
-                {siteMetadata.description}
+                {siteMetadata.description ? `<${siteMetadata.description} />` : ''}
+              </span>
+              {headerTitleBtn.ThemeSwitch && <ThemeSwitch isDown={true} />}
+            </div>
+            <h2 className="inline-flex h-6 gap-4 ">
+              <span className="font-semibold text-gray-900 dark:text-gray-100">
+                <TypingAnimation text1="Welcome!" text2="(⁎⁍̴̛ᴗ⁍̴̛⁎)" speed={100}></TypingAnimation>
               </span>
             </h2>
           </motion.div>
 
           {/* MARK 这里是导航栏nav */}
-          <motion.div variants={itemVariants} className="z-20 flex flex-row gap-4">
+          <motion.div variants={itemVariants} className="z-10 flex flex-row gap-4">
             {headerNavLinks
               .filter((link) => link.href !== '/')
               .map((link) => (
