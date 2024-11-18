@@ -1,37 +1,48 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+// import { useState, useEffect } from 'react'
 import siteMetadata from '@/data/siteMetadata'
 import MyConnectLink from './MyConnectLink'
 import { useLang } from '@/components/Lang/index'
-import { motion, useSpring, useMotionValue } from 'framer-motion'
-import { containerVariants, itemVariants } from '@/components/MyMotion'
+import { MotionDiv, containerVariants, itemVariants } from '@/components/MyMotion'
+import Feed from '../public/feed.svg'
 
 export default function Projects({ title }) {
-  const { t, lang, resolvedLang } = useLang()
+  const { t } = useLang()
 
   return (
-    <>
-      <motion.div initial="hidden" animate="visible" variants={containerVariants}>
-        <motion.div variants={itemVariants} className="flex w-fit flex-col gap-1 pb-12">
-          <h1 className="font-medium tracking-tight text-gray-900 dark:text-gray-100">&nbsp;</h1>
-          <h2>
-            <span className="font-semibold text-gray-900 dark:text-gray-100">{t(title)}</span>
-          </h2>
-        </motion.div>
+    <MotionDiv initial="hidden" animate="visible" variants={containerVariants}>
+      <MotionDiv variants={itemVariants} className="flex w-fit flex-col gap-1 pb-12">
+        <h1 className="font-medium tracking-tight text-gray-900 dark:text-gray-100">&nbsp;</h1>
+        <h2>
+          <span className="font-semibold text-gray-900 dark:text-gray-100">{t(title)}</span>
+        </h2>
+      </MotionDiv>
 
-        <motion.div variants={itemVariants} className="flex flex-col gap-4">
-          <MyConnectLink kind="mail" href={`mailto:${siteMetadata.email}`} />
-          <MyConnectLink kind="github" href={siteMetadata.github} />
-          <MyConnectLink kind="facebook" href={siteMetadata.facebook} />
-          <MyConnectLink kind="youtube" href={siteMetadata.youtube} />
-          <MyConnectLink kind="linkedin" href={siteMetadata.linkedin} />
-          <MyConnectLink kind="twitter" href={siteMetadata.twitter} />
-          <MyConnectLink kind="x" href={siteMetadata.x} />
-          <MyConnectLink kind="instagram" href={siteMetadata.instagram} />
-          <MyConnectLink kind="threads" href={siteMetadata.threads} />
-        </motion.div>
-      </motion.div>
-    </>
+      <MotionDiv variants={itemVariants} className="flex flex-col gap-4">
+        <MyConnectLink iconSize={4} kind="mail" href={`mailto:${siteMetadata.email}`} />
+        <MyConnectLink iconSize={4} kind="github" href={siteMetadata.github} />
+        <MyConnectLink iconSize={4} icon kind="facebook" href={siteMetadata.facebook} />
+        <MyConnectLink iconSize={4} icon kind="youtube" href={siteMetadata.youtube} />
+        <MyConnectLink iconSize={4} icon kind="linkedin" href={siteMetadata.linkedin} />
+        <MyConnectLink iconSize={4} icon kind="twitter" href={siteMetadata.twitter} />
+        <MyConnectLink iconSize={4} icon kind="x" href={siteMetadata.x} />
+        <MyConnectLink iconSize={4} icon kind="instagram" href={siteMetadata.instagram} />
+        <MyConnectLink iconSize={4} icon kind="threads" href={siteMetadata.threads} />
+        <a
+          href="/feed.xml"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-start gap-2"
+        >
+          <div className="text-gray-900 underline decoration-gray-100 underline-offset-2 transition hover:decoration-gray-400 dark:text-gray-100  dark:decoration-gray-500 dark:hover:decoration-gray-200">
+            <span className="capitalize">Feed</span>
+          </div>
+          <Feed
+            className={`h-4 w-4 fill-current text-gray-700 hover:text-primary-500 dark:text-gray-200 dark:hover:text-primary-400`}
+          />
+        </a>
+      </MotionDiv>
+    </MotionDiv>
   )
 }

@@ -42,7 +42,12 @@ const MyConnectLink = ({ kind, href, icon = false, iconSize = 8 }: SocialIconPro
   const SocialSvg = components[kind]
 
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer">
+    <a
+      href={href}
+      className="inline-flex items-center justify-start gap-2"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       {icon && (
         <SocialSvg
           className={`fill-current text-gray-700 hover:text-primary-500 dark:text-gray-200 dark:hover:text-primary-400 h-${iconSize} w-${iconSize}`}
