@@ -10,7 +10,7 @@ import Tag from '@/components/MyTagWithLinkLarge'
 import SectionContainer from '@/components/MySectionContainer'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/MyScrollTopAndComment'
-import { MotionDiv, MotionP } from '@/components/MyMotion'
+import { MotionDiv, containerVariants, itemVariants } from '@/components/MyMotion'
 
 interface LayoutProps {
   content: CoreContent<Blog>
@@ -28,19 +28,14 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
   return (
     <>
       <ScrollTopAndComment />
-      <MotionDiv
-        initial={{ opacity: 0, filter: 'blur(8px)', transform: 'translateY(16px) translateZ(0)' }}
-        animate={{ opacity: 1, filter: 'blur(0)', transform: 'none' }}
-        transition={{
-          type: 'tween', //默认值
-          duration: 0.6,
-          ease: [0.25, 0.7, 0.9, 1.0],
-        }}
-      >
+      <MotionDiv variants={containerVariants} initial="hidden" animate="visible">
         <SectionContainer>
           <article>
             <div>
-              <div className="space-y-1 pb-10 text-center dark:border-gray-700">
+              <MotionDiv
+                variants={itemVariants}
+                className="space-y-1 pb-10 text-center dark:border-gray-700"
+              >
                 <div className="w-full">
                   {/* TODO banner样式 */}
                   {/* <Bleed className="2xl:-mx-96"> */}
@@ -54,15 +49,21 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
                 <div className="relative pt-10">
                   <PageTitle>{title}</PageTitle>
                 </div>
-              </div>
-              <div className="prose max-w-none py-4 dark:prose-invert">{children}</div>
+              </MotionDiv>
+              <MotionDiv
+                variants={itemVariants}
+                className="prose max-w-none py-4 dark:prose-invert"
+              >
+                {children}
+              </MotionDiv>
               {siteMetadata.comments && (
-                <div
+                <MotionDiv
+                  variants={itemVariants}
                   className="pb-6 pt-6 text-center text-gray-700 dark:text-gray-300"
                   id="comment"
                 >
                   <Comments slug={slug} />
-                </div>
+                </MotionDiv>
               )}
               <footer>
                 {tags && (

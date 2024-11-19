@@ -8,6 +8,7 @@ import PageTitle from '@/components/PageTitle'
 import SectionContainer from '@/components/MySectionContainer'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
+import { MotionDiv, containerVariants, itemVariants } from '@/components/MyMotion'
 
 interface LayoutProps {
   content: CoreContent<Blog>
@@ -23,7 +24,7 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
     <SectionContainer>
       <ScrollTopAndComment />
       <article>
-        <div>
+        <MotionDiv variants={containerVariants} initial="hidden" animate="visible">
           <header>
             <div className="space-y-1 border-b border-gray-200 pb-10 text-center dark:border-gray-700">
               <dl>
@@ -75,7 +76,7 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
               </div>
             </footer>
           </div>
-        </div>
+        </MotionDiv>
       </article>
     </SectionContainer>
   )

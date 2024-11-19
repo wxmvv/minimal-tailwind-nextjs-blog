@@ -8,7 +8,7 @@ import SectionContainer from '@/components/MySectionContainer'
 import Tag from '@/components/MyTagWithLinkLarge'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/MyScrollTopAndComment'
-import { MotionDiv, MotionP, containerVariants, itemVariants } from '@/components/MyMotion'
+import { MotionDiv, containerVariants, itemVariants } from '@/components/MyMotion'
 
 const editUrl = (path) => `${siteMetadata.siteRepo}/blob/main/data/${path}`
 const discussUrl = (path) =>

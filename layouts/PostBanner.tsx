@@ -9,6 +9,7 @@ import PageTitle from '@/components/PageTitle'
 import SectionContainer from '@/components/MySectionContainer'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
+import { MotionDiv, containerVariants, itemVariants } from '@/components/MyMotion'
 
 interface LayoutProps {
   content: CoreContent<Blog>
@@ -26,7 +27,7 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
     <SectionContainer>
       <ScrollTopAndComment />
       <article>
-        <div>
+        <MotionDiv variants={containerVariants} initial="hidden" animate="visible">
           <div className="space-y-1 pb-10 text-center dark:border-gray-700">
             <div className="w-full">
               {/* <Bleed className="2xl:-mx-96"> */}
@@ -73,7 +74,7 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
               )}
             </div>
           </footer>
-        </div>
+        </MotionDiv>
       </article>
     </SectionContainer>
   )

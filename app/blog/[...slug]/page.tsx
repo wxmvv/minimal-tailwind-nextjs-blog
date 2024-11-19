@@ -1,23 +1,19 @@
 import 'css/prism.css'
 import 'katex/dist/katex.css'
 
-import PageTitle from '@/components/PageTitle'
 import { components } from '@/components/MDXComponents'
 import { MDXLayoutRenderer } from 'pliny/mdx-components'
 import { sortPosts, coreContent, allCoreContent } from 'pliny/utils/contentlayer'
 import { allBlogs, allAuthors } from 'contentlayer/generated'
 import type { Authors, Blog } from 'contentlayer/generated'
-import PostSimple from '@/layouts/PostSimple'
-import PostLayout from '@/layouts/PostLayout'
-import MyPostLayout from '@/layouts/MyPostLayout'
-import BannerLayout from '@/layouts/MyPostBanner'
-import PostBanner from '@/layouts/PostBanner'
 import { Metadata } from 'next'
 import siteMetadata from '@/data/siteMetadata'
 import { notFound } from 'next/navigation'
-
-// import { useEffect, useState } from 'react'
-// import { useRouter } from 'next/router'
+import MyPostLayout from '@/layouts/MyPostLayout'
+import BannerLayout from '@/layouts/MyPostBanner'
+import PostLayout from '@/layouts/PostLayout'
+import PostBanner from '@/layouts/PostBanner'
+import PostSimple from '@/layouts/PostSimple'
 
 const defaultLayout = 'MyPostLayout'
 const layouts = {
@@ -27,7 +23,6 @@ const layouts = {
   PostLayout,
   PostBanner,
 }
-
 export async function generateMetadata({
   params,
 }: {
@@ -64,8 +59,7 @@ export async function generateMetadata({
       title: post.title,
       description: post.summary,
       siteName: siteMetadata.title,
-      // locale: 'en_US',
-      locale: 'zh_CN',
+      locale: 'zh_CN', // locale: 'en_US',
       type: 'article',
       publishedTime: publishedAt,
       modifiedTime: modifiedAt,

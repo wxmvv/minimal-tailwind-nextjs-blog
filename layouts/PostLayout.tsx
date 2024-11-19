@@ -9,6 +9,7 @@ import Image from '@/components/Image'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
+import { MotionDiv, containerVariants, itemVariants } from '@/components/MyMotion'
 
 const editUrl = (path) => `${siteMetadata.siteRepo}/blob/main/data/${path}`
 const discussUrl = (path) =>
@@ -37,7 +38,12 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
     <SectionContainer>
       <ScrollTopAndComment />
       <article>
-        <div className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
+        <MotionDiv
+          className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
           <header className="pt-6 xl:pb-6">
             <div className="space-y-1 text-center">
               <dl className="space-y-10">
@@ -161,7 +167,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
               </div>
             </footer>
           </div>
-        </div>
+        </MotionDiv>
       </article>
     </SectionContainer>
   )
