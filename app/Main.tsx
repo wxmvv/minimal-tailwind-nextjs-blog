@@ -69,7 +69,7 @@ export default function Home({ posts }) {
     <>
       <div>
         {/* MARK 这里是右侧预览与动画 */}
-        <div className="fixed left-1/2 top-0 h-screen w-full">
+        <div className="fixed left-1/2 top-0 h-full w-full">
           <div className="relative left-8 top-1/2 h-fit max-w-[484px] -translate-y-1/2 transform-gpu">
             <AnimatePresence mode="wait">
               {activePreview !== null && (
@@ -131,7 +131,7 @@ export default function Home({ posts }) {
           </motion.div>
 
           {/* MARK 这里是导航栏nav */}
-          <motion.div variants={itemVariants} className="z-10 flex flex-row gap-4">
+          <motion.div variants={itemVariants} className="z-20 flex flex-row gap-4">
             {headerNavLinks
               .filter((link) => link.href !== '/')
               .map((link) => (
