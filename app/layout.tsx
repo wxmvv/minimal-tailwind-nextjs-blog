@@ -87,7 +87,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div className="bg-white dark:bg-gray-950 md:flex md:flex-row md:justify-center">
                 <div className="md:w-full md:min-w-[512px] md:max-w-2xl">
                   {/* MARK 这里修改字体 */}
-                  <div className="relative flex h-screen  max-w-2xl flex-col justify-between px-8 py-24 font-mono">
+                  <div className="relative flex h-full  max-w-2xl flex-col justify-between px-8 py-24 font-mono">
                     <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
                       <Header />
                       <main className="mb-auto pb-24">{children}</main>
