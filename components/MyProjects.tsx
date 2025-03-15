@@ -21,7 +21,7 @@ export default function Projects() {
           <div className="-m-4 flex flex-wrap">
             {projectsData.map((d) => (
               <motion.div
-                className="md max-w-[544px] p-4 md:w-1/2"
+                className="md max-w-[300px] p-4 md:w-1/2"
                 variants={itemVariants}
                 key={d.title + Math.random()} // 分配一个随机数给key 防止重复
               >
