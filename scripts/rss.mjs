@@ -23,8 +23,6 @@ const generateRssItem = (config, post) => {
 `
 }
 
-//     ${post.summary && `<description>${escape(post.summary)}</description>`}
-
 const generateRss = (config, posts, page = 'feed.xml') => `
   <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
@@ -52,13 +50,6 @@ async function generateRSS(config, allBlogs, page = 'feed.xml') {
   if (publishPosts.length > 0) {
     for (const tag of Object.keys(tagData)) {
       const filteredPosts = allBlogs.filter((post) => post.tags.map((t) => slug(t)).includes(tag))
-      // TODO rss添加内容
-      // console.log('hellohellohellohellohellohellohellohellohellohellohellohello')
-      // console.log(filteredPosts[0].body.raw)
-      // const content = await remark().use(html).process(filteredPosts[0].body.raw)
-      // const contenthtml = content.toString()
-      // console.log(contenthtml)
-      // const content = filteredPosts.body.raw
       const rss = generateRss(config, filteredPosts, `tags/${tag}/${page}`)
       const rssPath = path.join('public', 'tags', tag)
       mkdirSync(rssPath, { recursive: true })
@@ -69,6 +60,6 @@ async function generateRSS(config, allBlogs, page = 'feed.xml') {
 
 const rss = () => {
   generateRSS(siteMetadata, allBlogs)
-  // console.log('RSS feed generated...')
+  console.log('RSS feed generated...')
 }
 export default rss

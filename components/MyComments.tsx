@@ -7,34 +7,52 @@ import Giscus from '@giscus/react'
 import { useTheme } from 'next-themes'
 
 export default function Comments({ slug }: { slug: string }) {
-  const [loadComments, setLoadComments] = useState(false)
+  // const [loadComments, setLoadComments] = useState(false)
   const { theme, setTheme, resolvedTheme } = useTheme()
   if (!siteMetadata.comments?.provider) {
     return null
   }
 
   return (
-    <>
-      {loadComments ? (
-        <Giscus
-          id="comments"
-          repo="wxmvv/wxmvv.github.io"
-          repoId="R_kgDOI7nK0A"
-          category="Announcements"
-          categoryId="DIC_kwDOI7nK0M4Cgqgb"
-          mapping="pathname"
-          term="Welcome!"
-          reactionsEnabled="1"
-          emitMetadata="0"
-          inputPosition="top"
-          theme={resolvedTheme === 'dark' ? 'dark' : 'light'}
-          lang="zh-CN"
-          loading="lazy"
-        />
-      ) : (
-        // <CommentsComponent commentsConfig={siteMetadata.comments} slug={slug} />
-        <button onClick={() => setLoadComments(true)}>Load Comments</button>
-      )}
-    </>
+    <Giscus
+      id="comments"
+      repo="wxmvv/wxmvv.github.io"
+      repoId="R_kgDOI7nK0A"
+      category="Announcements"
+      categoryId="DIC_kwDOI7nK0M4Cgqgb"
+      mapping="pathname"
+      term="Welcome!"
+      reactionsEnabled="1"
+      emitMetadata="0"
+      inputPosition="top"
+      theme={resolvedTheme === 'dark' ? 'dark' : 'light'}
+      lang="zh-CN"
+      loading="lazy"
+    />
   )
+
+  // return (
+  //   <>
+  //     {loadComments ? (
+  //       <Giscus
+  //         id="comments"
+  //         repo="wxmvv/wxmvv.github.io"
+  //         repoId="R_kgDOI7nK0A"
+  //         category="Announcements"
+  //         categoryId="DIC_kwDOI7nK0M4Cgqgb"
+  //         mapping="pathname"
+  //         term="Welcome!"
+  //         reactionsEnabled="1"
+  //         emitMetadata="0"
+  //         inputPosition="top"
+  //         theme={resolvedTheme === 'dark' ? 'dark' : 'light'}
+  //         lang="zh-CN"
+  //         loading="lazy"
+  //       />
+  //     ) : (
+  //       // <CommentsComponent commentsConfig={siteMetadata.comments} slug={slug} />
+  //       <button onClick={() => setLoadComments(true)}>Load Comments</button>
+  //     )}
+  //   </>
+  // )
 }

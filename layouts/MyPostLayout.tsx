@@ -10,7 +10,9 @@ import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/MyScrollTopAndComment'
 import { MotionDiv, containerVariants, itemVariants } from '@/components/MyMotion'
 
-const editUrl = (path) => `${siteMetadata.siteRepo}/blob/main/data/${path}`
+// 因为文件库是pravite 会导致无法定位到github文章 所以改为定位到页面github
+// const editUrl = (path) => `${siteMetadata.siteRepo}/blob/main/data/${path}`
+const editUrl = (path) => `${siteMetadata.siteRepo}`
 const discussUrl = (path) =>
   `https://mobile.twitter.com/search?q=${encodeURIComponent(`${siteMetadata.siteUrl}/${path}`)}`
 // const postDateTemplate: Intl.DateTimeFormatOptions = { weekday: 'long',year: 'numeric', month: 'long', day: 'numeric'}
