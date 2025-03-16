@@ -31,6 +31,7 @@ const MediaPlayer = ({ src }) => {
           ref={videoRef}
           src={src}
           // autoPlay // 自动播放
+          playsInline // 在 iPhone Safari 上播放内联视频
           muted
           loop
           preload={'auto'}

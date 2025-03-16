@@ -77,7 +77,7 @@ export async function generateMetadata({
 }
 
 const isBuild = process.env.IS_BUILD === 'true'
-// MARK 中文路径相关
+// 中文路径相关 解决方案
 const isDev = process.env.IS_DEV === 'true'
 export const generateStaticParams = async () => {
   if (isDev) {

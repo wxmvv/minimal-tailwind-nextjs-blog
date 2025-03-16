@@ -1,21 +1,19 @@
 'use client'
 
-import headerNavLinks from '@/data/headerNavLinks'
-import { navBtn, headerTitleBtn } from '@/data/headerNavLinks'
-import SearchButton from '@/components/MySearchButton'
-import { useState, useEffect, useRef, use } from 'react'
-// import Image from 'next/image'
-import Media from '@/components/MyMedia'
+import headerNavLinks, { navBtn, headerTitleBtn } from '@/data/headerNavLinks'
+import SearchButton from '@/components/SearchButton'
+import { useState, useEffect, useRef } from 'react'
+import Media from '@/components/Media'
 import Link from '@/components/Link'
-import Tag from '@/components/MyTag'
+import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
-import ThemeSwitch from '@/components/MyThemeSwitch'
+import ThemeSwitch from '@/components/ThemeSwitch'
 import LangSwitch from '@/components/Lang/LangSwitch'
 // import { formatDate } from 'pliny/utils/formatDate'
 // import NewsletterForm from 'pliny/ui/NewsletterForm'
 import { useLang } from '@/components/Lang/index'
 import { AnimatePresence, motion } from 'framer-motion'
-import { containerVariants, itemVariants } from '@/components/MyMotion'
+import { containerVariants, itemVariants } from '@/components/Motion'
 import TypingAnimation from '@/components/TypingAnimation'
 
 const MAX_DISPLAY = 8
@@ -33,7 +31,7 @@ export default function Home({ posts }) {
       console.error = originalConsoleError // 清理，恢复原始方法
     }
   }, [])
-  const { t, lang, resolvedLang } = useLang()
+  const { t } = useLang()
   const [btnHoveredIndex, setBtnHoveredIndex] = useState(null)
   const [lastHoveredIndex, setLastHoveredIndex] = useState(null)
   const [activePreview, setActivePreview] = useState(null)
@@ -47,6 +45,7 @@ export default function Home({ posts }) {
     timeoutRef.current = setTimeout(() => {
       setActivePreview(index)
       setPreviewSrc(posts[index]?.media)
+      console.log(posts[index])
       setBtnHoveredIndex(index)
     }, 100)
   }
@@ -69,38 +68,30 @@ export default function Home({ posts }) {
     <>
       <div>
         {/* MARK 这里是右侧预览与动画 */}
-        <div className="fixed left-1/2 top-0 h-full w-full">
-          <div className="relative left-8 top-1/2 h-fit max-w-[484px] -translate-y-1/2 transform-gpu">
-            <AnimatePresence mode="wait">
-              {activePreview !== null && (
-                <motion.div
-                  className="h-fit w-full"
-                  key={activePreview}
-                  initial={{
-                    opacity: 0,
-                    filter: 'blur(8px)',
-                    transform: 'translateY(16px) translateZ(0)',
-                    // transitionDuration: '0.2s',
-                  }}
-                  animate={{
-                    opacity: 1,
-                    filter: 'blur(0px)',
-                    transform: 'none',
-                  }}
-                  exit={{
-                    opacity: 0,
-                    filter: 'blur(8px)',
-                    transform: 'none',
-                    // transitionDuration: '0.6s',
-                  }}
-                  transition={{
-                    type: 'tween',
-                    duration: 0.2,
-                  }}
-                >
-                  <Media src={previewSrc} />
-                </motion.div>
-              )}
+        <div className="fixed left-1/2 top-0 h-screen w-full">
+          <div className="relative left-8 top-1/3 h-auto max-w-[484px] -translate-y-1/2 transform-gpu">
+            <AnimatePresence>
+              {posts.slice(0, MAX_DISPLAY).map((post, index) => {
+                const { slug, date, title, summary, tags, media } = post
+                return (
+                  <motion.div
+                    className="absolute h-full w-full"
+                    key={'media' + index}
+                    initial={false}
+                    variants={{
+                      visible: { opacity: 1, filter: 'blur(0px)', transform: 'none' },
+                      hidden: { opacity: 0, filter: 'blur(16px)', transform: 'translateY(16px)' },
+                    }}
+                    animate={index === btnHoveredIndex ? 'visible' : 'hidden'}
+                    transition={{
+                      type: 'tween',
+                      duration: 0.4,
+                    }}
+                  >
+                    <Media src={media} key={index} />
+                  </motion.div>
+                )
+              })}
             </AnimatePresence>
           </div>
         </div>

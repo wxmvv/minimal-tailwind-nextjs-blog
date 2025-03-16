@@ -1,5 +1,5 @@
 import { genPageMetadata } from 'app/seo'
-import MyConnect from '@/components/MyConnect'
+import Connect from '@/components/Connect'
 
 export const metadata = genPageMetadata({ title: 'Connect' })
 import headerNavLinks from '../../data/headerNavLinks'
@@ -9,7 +9,7 @@ export default function Projects() {
   const connectTitle = connectLink ? connectLink.title : ''
   return (
     <>
-      <MyConnect title={connectTitle} />
+      <Connect title={connectTitle} />
     </>
   )
 }

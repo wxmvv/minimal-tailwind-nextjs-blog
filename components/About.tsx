@@ -6,7 +6,7 @@ import { Authors, allAuthors } from 'contentlayer/generated'
 import { coreContent } from 'pliny/utils/contentlayer'
 import { useLang } from '@/components/Lang/index'
 
-export default function MyAbout() {
+export default function About() {
   const { t, lang, resolvedLang } = useLang()
   const findfile =
     resolvedLang === 'cn' ? 'default-cn' : resolvedLang === 'en' ? 'default-en' : 'default'

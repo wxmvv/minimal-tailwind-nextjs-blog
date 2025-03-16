@@ -1,12 +1,12 @@
 import { genPageMetadata } from 'app/seo'
-import MyAbout from '@/components/MyAbout'
+import About from '@/components/About'
 
 export const metadata = genPageMetadata({ title: 'About' })
 
 export default function Page() {
   return (
     <>
-      <MyAbout />
+      <About />
     </>
   )
 }

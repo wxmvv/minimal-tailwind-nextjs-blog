@@ -5,10 +5,10 @@ import type { Blog } from 'contentlayer/generated'
 import Comments from '@/components/Comments'
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
-import SectionContainer from '@/components/MySectionContainer'
+import SectionContainer from '@/components/SectionContainer'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
-import { MotionDiv, containerVariants, itemVariants } from '@/components/MyMotion'
+import { MotionDiv, containerVariants, itemVariants } from '@/components/Motion'
 
 interface LayoutProps {
   content: CoreContent<Blog>

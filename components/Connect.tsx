@@ -4,7 +4,7 @@
 import siteMetadata from '@/data/siteMetadata'
 import MyConnectLink from './MyConnectLink'
 import { useLang } from '@/components/Lang/index'
-import { MotionDiv, containerVariants, itemVariants } from '@/components/MyMotion'
+import { MotionDiv, containerVariants, itemVariants } from '@/components/Motion'
 import Feed from '../public/feed.svg'
 
 export default function Projects({ title }) {

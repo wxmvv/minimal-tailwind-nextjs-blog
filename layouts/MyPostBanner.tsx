@@ -7,10 +7,10 @@ import Comments from '@/components/MyComments'
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
 import Tag from '@/components/MyTagWithLinkLarge'
-import SectionContainer from '@/components/MySectionContainer'
+import SectionContainer from '@/components/SectionContainer'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/MyScrollTopAndComment'
-import { MotionDiv, containerVariants, itemVariants } from '@/components/MyMotion'
+import { MotionDiv, containerVariants, itemVariants } from '@/components/Motion'
 
 interface LayoutProps {
   content: CoreContent<Blog>

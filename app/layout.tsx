@@ -5,17 +5,14 @@ import 'remark-github-blockquote-alert/alert.css'
 // import { Space_Grotesk } from 'next/font/google'
 // import { Analytics, AnalyticsConfig } from 'pliny/analytics'
 import { SearchProvider, SearchConfig } from 'pliny/search'
-import Header from '@/components/MyHeader' // import Header from '@/components/Header'
-import SectionContainer from '@/components/MySectionContainer'
+import Header from '@/components/Header'
+import SectionContainer from '@/components/SectionContainer'
 // import Footer from '@/components/Footer'
-// import Footer from '@/components/MyFooter'
-// import Footer from '@/components/MyFooterStart'
 import siteMetadata from '@/data/siteMetadata'
 import { ThemeProviders } from './theme-providers'
 import { Metadata } from 'next'
 import { LangProviders } from './lang-providers'
 import MyPlayer from '@/components/MyAudioPlayer/MyAudioPlayerBtn'
-// import { AplayerBtn } from '@/components/aplayer-btn/AplayerBtn'
 // const space_grotesk = Space_Grotesk({
 //   subsets: ['latin'],
 //   display: 'swap',
@@ -92,6 +89,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                       <Header />
                       <main className="mb-auto pb-24">{children}</main>
                       <MyPlayer />
+                      {/* MARK Footer */}
                       {/* <Footer /> */}
                     </SearchProvider>
                   </div>

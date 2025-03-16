@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import type { Authors } from 'contentlayer/generated'
 import Link from '@/components/Link'
 import { useLang } from '@/components/Lang/index'
-import { MotionDiv, containerVariants, itemVariants } from '@/components/MyMotion'
+import { MotionDiv, containerVariants, itemVariants } from '@/components/Motion'
 
 interface Props {
   children: ReactNode

@@ -4,12 +4,12 @@ import type { Blog, Authors } from 'contentlayer/generated'
 import Comments from '@/components/Comments'
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
-import SectionContainer from '@/components/MySectionContainer'
+import SectionContainer from '@/components/SectionContainer'
 import Image from '@/components/Image'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
-import { MotionDiv, containerVariants, itemVariants } from '@/components/MyMotion'
+import { MotionDiv, containerVariants, itemVariants } from '@/components/Motion'
 
 // 因为文件库是pravite 会导致无法定位到github文章 所以改为定位到页面github
 // const editUrl = (path) => `${siteMetadata.siteRepo}/blob/main/data/${path}`

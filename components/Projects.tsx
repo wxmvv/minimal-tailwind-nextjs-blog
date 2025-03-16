@@ -4,7 +4,7 @@ import Card from '@/components/MyCard'
 import { useState, useEffect } from 'react'
 import { useLang } from '@/components/Lang/index'
 import { motion } from 'framer-motion'
-import { containerVariants, itemVariants } from '@/components/MyMotion'
+import { containerVariants, itemVariants } from '@/components/Motion'
 
 export default function Projects() {
   const { t, lang, resolvedLang } = useLang()
