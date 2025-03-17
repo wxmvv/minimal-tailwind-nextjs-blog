@@ -1,6 +1,6 @@
 'use client'
 import projectsData from '@/data/projectsData'
-import Card from '@/components/MyCard'
+import Card from '@/components/Card'
 import { useState, useEffect } from 'react'
 import { useLang } from '@/components/Lang/index'
 import { motion } from 'framer-motion'

@@ -2,7 +2,7 @@
 
 // import { useState, useEffect } from 'react'
 import siteMetadata from '@/data/siteMetadata'
-import MyConnectLink from './MyConnectLink'
+import ConnectLink from './ConnectLink'
 import { useLang } from '@/components/Lang/index'
 import { MotionDiv, containerVariants, itemVariants } from '@/components/Motion'
 import Feed from '../public/feed.svg'
@@ -20,15 +20,15 @@ export default function Projects({ title }) {
       </MotionDiv>
 
       <MotionDiv variants={itemVariants} className="flex flex-col gap-4">
-        <MyConnectLink iconSize={4} kind="mail" href={`mailto:${siteMetadata.email}`} />
-        <MyConnectLink iconSize={4} kind="github" href={siteMetadata.github} />
-        <MyConnectLink iconSize={4} icon kind="facebook" href={siteMetadata.facebook} />
-        <MyConnectLink iconSize={4} icon kind="youtube" href={siteMetadata.youtube} />
-        <MyConnectLink iconSize={4} icon kind="linkedin" href={siteMetadata.linkedin} />
-        <MyConnectLink iconSize={4} icon kind="twitter" href={siteMetadata.twitter} />
-        <MyConnectLink iconSize={4} icon kind="x" href={siteMetadata.x} />
-        <MyConnectLink iconSize={4} icon kind="instagram" href={siteMetadata.instagram} />
-        <MyConnectLink iconSize={4} icon kind="threads" href={siteMetadata.threads} />
+        <ConnectLink iconSize={4} kind="mail" href={`mailto:${siteMetadata.email}`} />
+        <ConnectLink iconSize={4} kind="github" href={siteMetadata.github} />
+        <ConnectLink iconSize={4} icon kind="facebook" href={siteMetadata.facebook} />
+        <ConnectLink iconSize={4} icon kind="youtube" href={siteMetadata.youtube} />
+        <ConnectLink iconSize={4} icon kind="linkedin" href={siteMetadata.linkedin} />
+        <ConnectLink iconSize={4} icon kind="twitter" href={siteMetadata.twitter} />
+        <ConnectLink iconSize={4} icon kind="x" href={siteMetadata.x} />
+        <ConnectLink iconSize={4} icon kind="instagram" href={siteMetadata.instagram} />
+        <ConnectLink iconSize={4} icon kind="threads" href={siteMetadata.threads} />
         <a
           href="/feed.xml"
           target="_blank"

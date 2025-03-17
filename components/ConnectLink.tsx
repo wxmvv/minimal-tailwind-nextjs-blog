@@ -32,7 +32,7 @@ type SocialIconProps = {
   iconSize?: number
 }
 
-const MyConnectLink = ({ kind, href, icon = false, iconSize = 8 }: SocialIconProps) => {
+const ConnectLink = ({ kind, href, icon = false, iconSize = 8 }: SocialIconProps) => {
   if (
     !href ||
     (kind === 'mail' && !/^mailto:[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(href))
@@ -60,4 +60,4 @@ const MyConnectLink = ({ kind, href, icon = false, iconSize = 8 }: SocialIconPro
   )
 }
 
-export default MyConnectLink
+export default ConnectLink

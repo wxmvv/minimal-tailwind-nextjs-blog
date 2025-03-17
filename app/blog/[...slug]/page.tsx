@@ -9,17 +9,14 @@ import type { Authors, Blog } from 'contentlayer/generated'
 import { Metadata } from 'next'
 import siteMetadata from '@/data/siteMetadata'
 import { notFound } from 'next/navigation'
-import MyPostLayout from '@/layouts/MyPostLayout'
-import BannerLayout from '@/layouts/MyPostBanner'
+
 import PostLayout from '@/layouts/PostLayout'
 import PostBanner from '@/layouts/PostBanner'
 import PostSimple from '@/layouts/PostSimple'
 
-const defaultLayout = 'MyPostLayout'
+const defaultLayout = 'PostLayout'
 const layouts = {
   PostSimple,
-  MyPostLayout,
-  BannerLayout,
   PostLayout,
   PostBanner,
 }
@@ -121,7 +118,7 @@ export default async function Page({ params }: { params: { slug: string[] } }) {
     }
   })
 
-  const Layout = layouts[post.layout || defaultLayout]
+  const Layout = layouts[post.layout || defaultLayout] || layouts[defaultLayout]
 
   return (
     <>

@@ -68,17 +68,22 @@ export default function Home({ posts }) {
       <div>
         {/* MARK 这里是右侧预览与动画 */}
         <div className="fixed left-1/2 top-0 h-screen w-full">
-          <div className="relative left-8 top-1/2 h-auto max-w-[484px] -translate-y-1/2 transform-gpu border-lime-400">
+          <div className="relative left-8 top-1/2 flex h-auto max-w-[484px] -translate-y-1/2 transform-gpu items-center justify-center">
             <AnimatePresence>
               {posts.slice(0, MAX_DISPLAY).map((post, index) => {
                 const { slug, date, title, summary, tags, media } = post
                 return (
                   <motion.div
-                    className="absolute flex h-full w-full flex-col items-center justify-center border-lime-400"
+                    className="absolute flex h-fit w-full flex-col items-center justify-center"
                     key={'media' + index}
                     initial={false}
                     variants={{
-                      visible: { opacity: 1, filter: 'blur(0px)', transform: 'none' },
+                      visible: {
+                        opacity: 1,
+                        filter: 'blur(0px)',
+                        // transform: 'perspective(1000px) rotateY(-10deg)',  3d翻转效果
+                        transform: 'none',
+                      },
                       hidden: {
                         opacity: 0,
                         filter: 'blur(16px)',

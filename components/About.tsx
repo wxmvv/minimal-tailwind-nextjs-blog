@@ -1,7 +1,7 @@
 'use client'
 
 import { MDXLayoutRenderer } from 'pliny/mdx-components'
-import AuthorLayout from '@/layouts/MyAuthorLayout'
+import AuthorLayout from '@/layouts/AuthorLayout'
 import { Authors, allAuthors } from 'contentlayer/generated'
 import { coreContent } from 'pliny/utils/contentlayer'
 import { useLang } from '@/components/Lang/index'
