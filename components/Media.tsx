@@ -24,7 +24,7 @@ const MediaPlayer = ({ src }) => {
   }
 
   return (
-    <div>
+    <>
       {isVideo ? (
         <video
           key={src}
@@ -35,7 +35,7 @@ const MediaPlayer = ({ src }) => {
           muted
           loop
           preload={'auto'}
-          className={'max-h-[500px] rounded-[10px]'}
+          className={'max-h-[800px] rounded-[10px]'}
           onCanPlay={handleCanPlay}
           onError={(e) => console.error('Video error:', e)}
         />
@@ -53,7 +53,7 @@ const MediaPlayer = ({ src }) => {
           style={{ color: 'transparent' }}
         />
       )}
-    </div>
+    </>
   )
 }
 

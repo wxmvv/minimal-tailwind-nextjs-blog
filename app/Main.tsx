@@ -45,9 +45,8 @@ export default function Home({ posts }) {
     timeoutRef.current = setTimeout(() => {
       setActivePreview(index)
       setPreviewSrc(posts[index]?.media)
-      console.log(posts[index])
       setBtnHoveredIndex(index)
-    }, 100)
+    }, 1)
   }
   const handleMouseLeave = () => {
     if (timeoutRef.current) {
@@ -69,23 +68,27 @@ export default function Home({ posts }) {
       <div>
         {/* MARK 这里是右侧预览与动画 */}
         <div className="fixed left-1/2 top-0 h-screen w-full">
-          <div className="relative left-8 top-1/3 h-auto max-w-[484px] -translate-y-1/2 transform-gpu">
+          <div className="relative left-8 top-1/2 h-auto max-w-[484px] -translate-y-1/2 transform-gpu border-lime-400">
             <AnimatePresence>
               {posts.slice(0, MAX_DISPLAY).map((post, index) => {
                 const { slug, date, title, summary, tags, media } = post
                 return (
                   <motion.div
-                    className="absolute h-full w-full"
+                    className="absolute flex h-full w-full flex-col items-center justify-center border-lime-400"
                     key={'media' + index}
                     initial={false}
                     variants={{
                       visible: { opacity: 1, filter: 'blur(0px)', transform: 'none' },
-                      hidden: { opacity: 0, filter: 'blur(16px)', transform: 'translateY(16px)' },
+                      hidden: {
+                        opacity: 0,
+                        filter: 'blur(16px)',
+                        transform: 'translateY(16px)',
+                      },
                     }}
                     animate={index === btnHoveredIndex ? 'visible' : 'hidden'}
                     transition={{
                       type: 'tween',
-                      duration: 0.4,
+                      duration: 0.3,
                     }}
                   >
                     <Media src={media} key={index} />
@@ -141,12 +144,13 @@ export default function Home({ posts }) {
 
           {/* MARK 这里是文章列表 */}
           <ul className="z-10 flex w-fit shrink-0 flex-col gap-2">
+            {/* 这里是hover背景动画块 */}
             <div
               className="absolute -ml-[16px] h-full w-full bg-zinc-100 dark:bg-zinc-800"
               style={{
                 transition:
                   btnHoveredIndex !== null
-                    ? 'opacity 0.5s ease, top 0.4s ease, left 0.5s ease, width 0.4s ease'
+                    ? 'opacity 0.4s ease, top 0.2s ease, left 0.3s ease, width 0.3s ease'
                     : 'opacity 0.8s ease',
                 top:
                   lastHoveredIndex !== null ? liRefs.current[lastHoveredIndex]?.offsetTop : 'none',
