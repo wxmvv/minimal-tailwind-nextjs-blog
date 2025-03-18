@@ -35,7 +35,7 @@ const MediaPlayer = ({ src }) => {
           muted
           loop
           preload={'auto'}
-          className={'max-h-[800px] rounded-[10px]'}
+          className={'h-auto max-h-[484px] w-auto max-w-[484px] rounded-[10px]'}
           onCanPlay={handleCanPlay}
           onError={(e) => console.error('Video error:', e)}
         />
@@ -49,7 +49,7 @@ const MediaPlayer = ({ src }) => {
           height={0}
           sizes={'100vw'}
           decoding={'async'}
-          className={'h-auto w-7/12 rounded-[10px] object-contain'}
+          className={'h-auto max-h-[484px] w-auto max-w-[484px] rounded-[10px] object-contain'}
           style={{ color: 'transparent' }}
         />
       )}

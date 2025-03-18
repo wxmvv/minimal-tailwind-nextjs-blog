@@ -74,7 +74,7 @@ export default function Home({ posts }) {
                 const { slug, date, title, summary, tags, media } = post
                 return (
                   <motion.div
-                    className="absolute flex h-fit w-full flex-col items-center justify-center"
+                    className="absolute flex h-fit w-full flex-col"
                     key={'media' + index}
                     initial={false}
                     variants={{
