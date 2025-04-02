@@ -112,7 +112,7 @@ export default function Home({ posts }) {
           variants={containerVariants}
         >
           {/* MARK 这里是 author 和 desc 标题栏*/}
-          <motion.div variants={itemVariants} className="z-20 flex w-full flex-col gap-1">
+          <motion.div variants={itemVariants} className="z-30 flex w-full flex-col gap-1">
             <div className="relative inline-flex w-fit gap-2">
               <h1 className="inline-block font-extrabold text-gray-900 dark:text-gray-100">
                 {siteMetadata.author}
