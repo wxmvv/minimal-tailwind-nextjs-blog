@@ -1,5 +1,5 @@
 import { genPageMetadata } from 'app/seo'
-import About from '@/components/About'
+import About from '@/layouts/About'
 
 export const metadata = genPageMetadata({ title: 'About' })
 

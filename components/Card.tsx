@@ -6,7 +6,6 @@ const Card = ({ title, description, imgSrc, href }) => {
     <Image
       alt={title}
       src={imgSrc}
-      // className="bg-slate-400 object-contain object-center md:h-36 lg:h-48"
       className="object-cover object-center"
       width={544}
       height={306}

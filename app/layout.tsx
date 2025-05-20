@@ -7,12 +7,12 @@ import 'remark-github-blockquote-alert/alert.css'
 import { SearchProvider, SearchConfig } from 'pliny/search'
 import Header from '@/components/Header'
 import SectionContainer from '@/components/SectionContainer'
-// import Footer from '@/components/Footer'
+import Footer from '@/components/Footer'
 import siteMetadata from '@/data/siteMetadata'
 import { ThemeProviders } from './theme-providers'
 import { Metadata } from 'next'
 import { LangProviders } from './lang-providers'
-import MyPlayer from '@/components/MyAudioPlayer/MyAudioPlayerBtn'
+import MyPlayer from '@/components/AudioPlayer/MyAudioPlayerBtn'
 // const space_grotesk = Space_Grotesk({
 //   subsets: ['latin'],
 //   display: 'swap',
