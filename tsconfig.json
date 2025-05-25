@@ -43,12 +43,12 @@
     ".contentlayer/generated",
     ".contentlayer/generated/**/*.json",
     ".next/types/**/*.ts",
-    "components/AudioPlayer/AudioPlayer.jsx",
-    "components/AudioPlayer/main.jsx",
-    "components/AudioPlayer/**/*.jsx",
-    "components/AudioPlayer/**/*.css",
-    "components/AudioPlayer/**/*.png",
-    "components/AudioPlayer/**/*.riv"
+    "components/MyAudioPlayer/AudioPlayer.jsx",
+    "components/MyAudioPlayer/main.jsx",
+    "components/MyAudioPlayer/**/*.jsx",
+    "components/MyAudioPlayer/**/*.css",
+    "components/MyAudioPlayer/**/*.png",
+    "components/MyAudioPlayer/**/*.riv"
   ],
   "exclude": ["node_modules", "out"]
 }

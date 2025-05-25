@@ -1,5 +1,5 @@
 import { genPageMetadata } from 'app/seo'
-import Connect from '@/layouts/Connect'
+import Connect from '@/components/Connect'
 
 export const metadata = genPageMetadata({ title: 'Connect' })
 import headerNavLinks from '../../data/headerNavLinks'

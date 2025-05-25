@@ -1,12 +1,12 @@
 import { genPageMetadata } from 'app/seo'
-import Project from '@/layouts/Project'
+import ProjectsVIew from '@/components/Projects'
 
 export const metadata = genPageMetadata({ title: 'Projects' })
 
 export default function Projects() {
   return (
     <>
-      <Project />
+      <ProjectsVIew />
     </>
   )
 }

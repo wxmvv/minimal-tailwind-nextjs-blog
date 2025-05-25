@@ -2,7 +2,7 @@
 
 // import { useState, useEffect } from 'react'
 import siteMetadata from '@/data/siteMetadata'
-import ConnectLink from '../ConnectLink'
+import ConnectLink from './ConnectLink'
 import { useLang } from '@/components/Lang/index'
 import { MotionDiv, containerVariants, itemVariants } from '@/components/Motion'
 import Feed from '../public/feed.svg'
