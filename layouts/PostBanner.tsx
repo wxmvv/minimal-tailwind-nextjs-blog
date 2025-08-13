@@ -19,7 +19,7 @@ interface LayoutProps {
 }
 
 export default function PostMinimal({ content, next, prev, children }: LayoutProps) {
-  const { filePath, path, slug, date, title, tags, images } = content
+  const { filePath, path, slug, date, title, tags, images, comments } = content
   const basePath = path.split('/')[0]
   const displayImage =
     images && images.length > 0 ? images[0] : 'https://picsum.photos/seed/picsum/800/400'
@@ -60,7 +60,7 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
               >
                 {children}
               </MotionDiv>
-              {siteMetadata.comments && (
+              {comments && (
                 <MotionDiv
                   variants={itemVariants}
                   className="pb-6 pt-6 text-center text-gray-700 dark:text-gray-300"

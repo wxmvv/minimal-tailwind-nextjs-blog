@@ -25,7 +25,7 @@ interface LayoutProps {
 }
 
 export default function PostLayout({ content, authorDetails, next, prev, children }: LayoutProps) {
-  const { filePath, path, slug, date, title, tags } = content
+  const { filePath, path, slug, date, title, tags, comments } = content
   const basePath = path.split('/')[0]
 
   return (
@@ -92,7 +92,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                     {` • `}
                     <Link href={editUrl(filePath)}>View on GitHub</Link>
                   </div>
-                  {siteMetadata.comments && (
+                  {comments && (
                     <div
                       className="pb-6 pt-6 text-center text-gray-700 dark:text-gray-300"
                       id="comment"

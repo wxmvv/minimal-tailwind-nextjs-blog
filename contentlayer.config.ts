@@ -109,6 +109,7 @@ export const Blog = defineDocumentType(() => ({
     // media on homepage or banner
     media: { type: 'string' },
     onhomepage: { type: 'boolean', default: true },
+    comments: { type: 'boolean', default: true },
   },
   computedFields: {
     ...computedFields,
