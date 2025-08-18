@@ -93,6 +93,12 @@ const siteMetadata = {
     //   indexName: 'docsearch',
     // },
   },
+
+  // trackList: [
+  // 	{ url: '/bg_audio/伊藤賢治 - Rising Sun.mp3', title: '伊藤賢治 - Rising Sun', tags: ['se'] },
+  // 	{ url: '/bg_audio/植松伸夫 - 街のテーマ.mp3', title: '植松伸夫 - 街のテーマ', tags: ['se'] },
+  // 	{ url: '/bg_audio/植松伸夫 - 怒闘.mp3', title: '植松伸夫 - 怒闘', tags: ['se'] }
+  // ]
 }
 
 module.exports = siteMetadata

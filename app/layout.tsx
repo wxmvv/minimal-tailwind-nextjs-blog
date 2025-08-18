@@ -88,7 +88,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
                       <Header />
                       <main className="mb-auto pb-24">{children}</main>
-                      <MyPlayer />
+                      {siteMetadata.trackList ? (
+                        <MyPlayer trackList={siteMetadata.trackList} />
+                      ) : (
+                        <MyPlayer />
+                      )}
+
                       {/* MARK Footer */}
                       {/* <Footer /> */}
                     </SearchProvider>

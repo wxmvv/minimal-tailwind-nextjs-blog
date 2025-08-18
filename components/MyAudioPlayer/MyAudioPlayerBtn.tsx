@@ -20,31 +20,33 @@ import music_dark_riv from './music_dark.riv'
 // TODO 使用supabase获取音频列表
 // https://supabase.com/dashboard/project/yfkmvsfofvosjxtdoksz
 
-const MyPlayer = () => {
+const defaultTracks = [
+  { url: '/bg_audio/植松伸夫 - フィナーレ.mp3', title: '植松伸夫 - フィナーレ', tags: ['se'] },
+  {
+    url: '/bg_audio/植松伸夫 - プレリュード.mp3',
+    title: '植松伸夫 - プレリュード',
+    tags: ['se'],
+  },
+  // { url: '/bg_audio/藤岡千尋 - ディープ.mp3', title: '藤岡千尋 - ディープ', tags: ['se'] },
+  { url: '/bg_audio/笹井隆司 - 異郷の町.mp3', title: '笹井隆司 - 異郷の町', tags: ['se'] },
+  { url: '/bg_audio/伊藤賢治 - Rising Sun.mp3', title: '伊藤賢治 - Rising Sun', tags: ['se'] },
+  { url: '/bg_audio/植松伸夫 - 街のテーマ.mp3', title: '植松伸夫 - 街のテーマ', tags: ['se'] },
+  { url: '/bg_audio/植松伸夫 - 怒闘.mp3', title: '植松伸夫 - 怒闘', tags: ['se'] },
+  {
+    url: '/bg_audio/植松伸夫 - コーネリア城.mp3',
+    title: '植松伸夫 - コーネリア城',
+    tags: ['se'],
+  },
+  {
+    url: '/bg_audio/植松伸夫 - チョコボのテーマ.mp3',
+    title: '植松伸夫 - チョコボのテーマ',
+    tags: ['se'],
+  },
+]
+
+const MyPlayer = ({ trackList = defaultTracks }) => {
   const { resolvedTheme } = useTheme()
-  const tracks = [
-    { url: '/bg_audio/植松伸夫 - フィナーレ.mp3', title: '植松伸夫 - フィナーレ', tags: ['se'] },
-    {
-      url: '/bg_audio/植松伸夫 - プレリュード.mp3',
-      title: '植松伸夫 - プレリュード',
-      tags: ['se'],
-    },
-    // { url: '/bg_audio/藤岡千尋 - ディープ.mp3', title: '藤岡千尋 - ディープ', tags: ['se'] },
-    { url: '/bg_audio/笹井隆司 - 異郷の町.mp3', title: '笹井隆司 - 異郷の町', tags: ['se'] },
-    { url: '/bg_audio/伊藤賢治 - Rising Sun.mp3', title: '伊藤賢治 - Rising Sun', tags: ['se'] },
-    { url: '/bg_audio/植松伸夫 - 街のテーマ.mp3', title: '植松伸夫 - 街のテーマ', tags: ['se'] },
-    { url: '/bg_audio/植松伸夫 - 怒闘.mp3', title: '植松伸夫 - 怒闘', tags: ['se'] },
-    {
-      url: '/bg_audio/植松伸夫 - コーネリア城.mp3',
-      title: '植松伸夫 - コーネリア城',
-      tags: ['se'],
-    },
-    {
-      url: '/bg_audio/植松伸夫 - チョコボのテーマ.mp3',
-      title: '植松伸夫 - チョコボのテーマ',
-      tags: ['se'],
-    },
-  ]
+  const tracks = trackList
 
   const [showPlayer, setShowPlayer] = useState(false)
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
