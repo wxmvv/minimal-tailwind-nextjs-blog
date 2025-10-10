@@ -14,7 +14,7 @@ export default function Projects() {
         <motion.div variants={itemVariants} className="flex w-fit flex-col gap-1">
           <h1 className="font-medium tracking-tight text-gray-900 dark:text-gray-100">&nbsp;</h1>
           <h2>
-            <span className="font-semibold text-gray-900 dark:text-gray-100">{t('Projects')}</span>{' '}
+            <span className="font-semibold text-gray-900 dark:text-gray-100">{t('Projects')}</span>
           </h2>
         </motion.div>
         <div className="container py-12">

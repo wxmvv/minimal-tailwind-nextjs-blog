@@ -20,8 +20,8 @@ export default function Projects({ title }) {
       </MotionDiv>
 
       <MotionDiv variants={itemVariants} className="flex flex-col gap-4">
-        <ConnectLink iconSize={4} kind="mail" href={`mailto:${siteMetadata.email}`} />
-        <ConnectLink iconSize={4} kind="github" href={siteMetadata.github} />
+        <ConnectLink iconSize={4} icon kind="mail" href={`mailto:${siteMetadata.email}`} />
+        <ConnectLink iconSize={4} icon kind="github" href={siteMetadata.github} />
         <ConnectLink iconSize={4} icon kind="facebook" href={siteMetadata.facebook} />
         <ConnectLink iconSize={4} icon kind="youtube" href={siteMetadata.youtube} />
         <ConnectLink iconSize={4} icon kind="linkedin" href={siteMetadata.linkedin} />
