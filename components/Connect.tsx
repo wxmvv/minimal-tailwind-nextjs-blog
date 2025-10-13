@@ -35,12 +35,12 @@ export default function Projects({ title }) {
           rel="noopener noreferrer"
           className="inline-flex items-center justify-start gap-2"
         >
-          <div className="text-gray-900 underline decoration-gray-100 underline-offset-2 transition hover:decoration-gray-400 dark:text-gray-100  dark:decoration-gray-500 dark:hover:decoration-gray-200">
-            <span className="capitalize">Feed</span>
-          </div>
           <Feed
             className={`h-4 w-4 fill-current text-gray-700 hover:text-primary-500 dark:text-gray-200 dark:hover:text-primary-400`}
           />
+          <div className="text-gray-900 underline decoration-gray-100 underline-offset-2 transition hover:decoration-gray-400 dark:text-gray-100  dark:decoration-gray-500 dark:hover:decoration-gray-200">
+            <span className="capitalize">Feed</span>
+          </div>
         </a>
       </MotionDiv>
     </MotionDiv>
