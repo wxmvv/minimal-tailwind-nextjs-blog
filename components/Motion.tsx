@@ -6,6 +6,7 @@ export const MotionDiv = motion.div
 export const MotionP = motion.p
 export const MotionLi = motion.li
 
+// 列表container出现的动画
 export const containerVariants = {
   hidden: {
     opacity: 0,
@@ -28,6 +29,8 @@ export const containerVariants = {
     },
   },
 }
+
+// 列表item出现的动画
 export const itemVariants = {
   hidden: {
     opacity: 0,

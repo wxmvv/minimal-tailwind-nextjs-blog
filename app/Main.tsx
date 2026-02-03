@@ -38,20 +38,24 @@ export default function Home({ posts }) {
   const [previewSrc, setPreviewSrc] = useState('')
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
   const handleMouseEnter = (index) => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current)
-    }
+    if (timeoutRef.current) clearTimeout(timeoutRef.current)
+
     setLastHoveredIndex(index)
+
+    bgTargetRef.current = { x: 0, y: 0 }
+    contentTargetRef.current = { x: 0, y: 0 }
+
     timeoutRef.current = setTimeout(() => {
       setActivePreview(index)
       setPreviewSrc(posts[index]?.media)
       setBtnHoveredIndex(index)
     }, 1)
   }
-  const handleMouseLeave = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current)
-    }
+  const handleMouseLeave = (index) => {
+    bgTargetRef.current = { x: 0, y: 0 }
+    contentTargetRef.current = { x: 0, y: 0 }
+
+    if (timeoutRef.current) clearTimeout(timeoutRef.current)
     timeoutRef.current = setTimeout(() => {
       setActivePreview(null)
       setBtnHoveredIndex(null)
@@ -62,6 +66,50 @@ export default function Home({ posts }) {
   useEffect(() => {
     liRefs.current = liRefs.current.slice(0, posts.length)
   }, [posts])
+
+  // 鼠标偏移特效
+  const bgTargetRef = useRef({ x: 0, y: 0 })
+  const contentTargetRef = useRef({ x: 0, y: 0 })
+  const bgCurrentRef = useRef({ x: 0, y: 0 })
+  const contentCurrentRef = useRef({ x: 0, y: 0 })
+  const rafRef = useRef<number | null>(null)
+
+  const hoverBgRef = useRef<HTMLDivElement | null>(null)
+  const cursorOffsetRef = useRef({ x: 0, y: 0 })
+  const BG_MAX = 3 // 背景偏移量
+  const CONTENT_MAX = 1 // 内容偏移量
+  const ease = 0.14 //Motion 风格：0.08 ～ 0.15
+
+  useEffect(() => {
+    const animate = () => {
+      const bg = hoverBgRef.current
+      if (bg) {
+        bgCurrentRef.current.x += (bgTargetRef.current.x - bgCurrentRef.current.x) * ease
+        bgCurrentRef.current.y += (bgTargetRef.current.y - bgCurrentRef.current.y) * ease
+
+        bg.style.transform = `translate(${bgCurrentRef.current.x}px, ${bgCurrentRef.current.y}px)`
+      }
+
+      const index = lastHoveredIndex
+      const el = index !== null ? liRefs.current[index] : null
+      if (el) {
+        contentCurrentRef.current.x +=
+          (contentTargetRef.current.x - contentCurrentRef.current.x) * ease
+        contentCurrentRef.current.y +=
+          (contentTargetRef.current.y - contentCurrentRef.current.y) * ease
+
+        el.style.transform = `translate(${contentCurrentRef.current.x}px, ${contentCurrentRef.current.y}px)`
+      }
+
+      rafRef.current = requestAnimationFrame(animate)
+    }
+
+    rafRef.current = requestAnimationFrame(animate)
+
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current)
+    }
+  }, [lastHoveredIndex])
 
   return (
     <>
@@ -149,8 +197,9 @@ export default function Home({ posts }) {
 
           {/* MARK 这里是文章列表 */}
           <ul className="z-10 flex w-fit shrink-0 flex-col gap-2">
-            {/* 这里是hover背景动画块 */}
+            {/* MARK 这里是hover背景动画块 */}
             <div
+              ref={hoverBgRef}
               className="absolute -ml-[16px] h-full w-full bg-zinc-100 dark:bg-zinc-800"
               style={{
                 transition:
@@ -162,12 +211,13 @@ export default function Home({ posts }) {
                 left: lastHoveredIndex !== null ? liRefs.current[0]?.offsetLeft : 'none',
                 width:
                   lastHoveredIndex !== null
-                    ? liRefs.current[lastHoveredIndex || 0]?.offsetWidth + 32
+                    ? liRefs.current[lastHoveredIndex || 0]?.offsetWidth
                     : 0,
                 height:
                   lastHoveredIndex !== null ? liRefs.current[lastHoveredIndex]?.offsetHeight : 0,
                 opacity: btnHoveredIndex !== null ? 1 : 0,
                 borderRadius: '10px',
+                transform: `translate(${cursorOffsetRef.current.x}px, ${cursorOffsetRef.current.y}px)`,
               }}
             ></div>
             {!posts.length && 'No posts found.'}
@@ -178,15 +228,37 @@ export default function Home({ posts }) {
                   variants={itemVariants}
                   key={slug}
                   className="inline w-fit"
+                  style={{
+                    overflow: 'visible',
+                  }}
                   onMouseEnter={() => handleMouseEnter(index)}
-                  onMouseLeave={handleMouseLeave}
+                  onMouseLeave={() => handleMouseLeave(index)}
+                  onMouseMove={(e) => {
+                    const el = liRefs.current[index]
+                    const bg = hoverBgRef.current
+                    if (!el || !bg) return
+
+                    const rect = el.getBoundingClientRect()
+
+                    const x = e.clientX - rect.left
+                    const y = e.clientY - rect.top
+
+                    const dx = (x - rect.width / 2) / (rect.width / 2)
+                    const dy = (y - rect.height / 2) / (rect.height / 2)
+
+                    bgTargetRef.current.x = dx * BG_MAX
+                    bgTargetRef.current.y = dy * BG_MAX
+
+                    contentTargetRef.current.x = dx * CONTENT_MAX
+                    contentTargetRef.current.y = dy * CONTENT_MAX
+                  }}
                   ref={(el) => {
                     liRefs.current[index] = el
                   }}
                 >
                   <article>
                     <Link href={`/blog/${slug}`}>
-                      <div className="relative inline-flex flex-col gap-1 py-2 text-gray-900 no-underline dark:text-gray-100">
+                      <div className="relative  inline-flex -translate-x-[18px]  flex-col gap-1 px-[18px] py-2 text-gray-900 no-underline dark:text-gray-100">
                         <span className="font-medium text-gray-900 hover:underline  dark:text-gray-100">
                           {title}
                         </span>
