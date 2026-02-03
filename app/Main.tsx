@@ -76,7 +76,7 @@ export default function Home({ posts }) {
 
   const hoverBgRef = useRef<HTMLDivElement | null>(null)
   const cursorOffsetRef = useRef({ x: 0, y: 0 })
-  const BG_MAX = 3 // 背景偏移量
+  const BG_MAX = 4 // 背景偏移量
   const CONTENT_MAX = 1 // 内容偏移量
   const ease = 0.14 //Motion 风格：0.08 ～ 0.15
 
@@ -200,7 +200,7 @@ export default function Home({ posts }) {
             {/* MARK 这里是hover背景动画块 */}
             <div
               ref={hoverBgRef}
-              className="absolute -ml-[16px] h-full w-full bg-zinc-100 dark:bg-zinc-800"
+              className="absolute -ml-[16px] h-full w-full"
               style={{
                 transition:
                   btnHoveredIndex !== null
@@ -216,10 +216,36 @@ export default function Home({ posts }) {
                 height:
                   lastHoveredIndex !== null ? liRefs.current[lastHoveredIndex]?.offsetHeight : 0,
                 opacity: btnHoveredIndex !== null ? 1 : 0,
-                borderRadius: '10px',
+                borderRadius: '16px',
                 transform: `translate(${cursorOffsetRef.current.x}px, ${cursorOffsetRef.current.y}px)`,
               }}
-            ></div>
+            >
+              <div
+                className="liquid_glass-wrapper h-full w-full"
+                style={{
+                  transition: btnHoveredIndex !== null ? 'opacity 0.4s ease' : 'opacity 0.8s ease',
+                }}
+              >
+                <svg style={{ display: 'none' }}>
+                  <defs>
+                    <filter
+                      id="liquid_glass_filter"
+                      x="0%"
+                      y="0%"
+                      width="100%"
+                      height="100%"
+                      filterUnits="objectBoundingBox"
+                    >
+                      <feDisplacementMap scale="200" />
+                    </filter>
+                  </defs>
+                </svg>
+                <div className="liquid_glass-outer"></div>
+                <div className="liquid_glass-cover"></div>
+                <div className="liquid_glass-sharp"></div>
+                <div className="liquid_glass-reflect"></div>
+              </div>
+            </div>
             {!posts.length && 'No posts found.'}
             {posts.slice(0, MAX_DISPLAY).map((post, index) => {
               const { slug, date, title, summary, tags, media } = post

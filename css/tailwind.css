@@ -53,14 +53,16 @@ input:-webkit-autofill:focus {
 /* MARK 我的Markdow设置 */
 /* TODO 添加自定义MARKDOWN样式 */
 
-text > p {
+text>p {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
-.imgDesc > p {
+
+.imgDesc>p {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
+
 /* .prose { */
 /* color: aqua; */
 /* } */
@@ -68,18 +70,23 @@ text > p {
 h1 {
   font-weight: 500;
 }
+
 h2 {
   font-weight: 500;
 }
+
 h3 {
   font-weight: 500;
 }
+
 time {
   font-weight: 400;
 }
+
 span {
   font-weight: 400;
 }
+
 p {
   font-weight: 400;
 }
@@ -87,39 +94,50 @@ p {
 @layer components {
   .prose {
     @apply text-base;
+
     p {
       @apply mb-4 mt-0 pb-0 pt-0 text-base;
       /* @apply text-base; */
     }
+
     h1 {
       @apply pb-2 pt-6 text-base;
     }
+
     h2 {
       @apply pb-1 pt-4 text-base;
     }
+
     h3 {
       @apply pb-1 pt-2 text-base;
     }
+
     h4 {
       @apply pt-2 text-base;
     }
+
     h5 {
       @apply pt-2 text-base;
     }
+
     h6 {
       @apply pt-1 text-base;
     }
+
     ol,
     ul,
     .contains-task-list {
       @apply mb-6 pl-10 -indent-1;
     }
+
     .task-list-item {
       @apply -ml-6 mb-1 mt-1 h-auto text-base;
     }
-    li > input {
+
+    li>input {
       @apply my-0 mr-0 rounded bg-transparent text-cyan-500;
     }
+
     /* li > input[type="checkbox"]:checked {
       @apply text-black
     } */
@@ -127,26 +145,94 @@ p {
     li {
       @apply my-1 text-base marker:text-cyan-500 !important;
     }
-    li > p {
+
+    li>p {
       @apply my-1 !important;
     }
+
     strong,
     em,
     del {
       @apply text-base;
     }
+
     a {
       @apply text-gray-600 underline underline-offset-2 dark:text-gray-400;
     }
   }
+
   .author.prose {
     p {
-      @apply mb-0 mt-0 pb-10  text-base;
+      @apply mb-0 mt-0 pb-10 text-base;
       /* @apply text-base; */
     }
+
     p:last-child {
-      @apply mb-0 mt-0 pb-0  text-base;
+      @apply mb-0 mt-0 pb-0 text-base;
       /* @apply text-base; */
     }
   }
+}
+
+
+
+/* https://juejin.cn/post/7514618352829448244 */
+.liquid_glass-wrapper {
+  --liquid_glass-border-radius: 1rem;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+
+  border-radius: var(--liquid_glass-border-radius);
+}
+
+.liquid_glass-border-radius {
+  border-radius: var(--liquid_glass-border-radius);
+}
+
+.liquid_glass-outer {
+  backdrop-filter: url(#liquid_glass_filter);
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: var(--liquid_glass-border-radius);
+
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><rect x="0" y="0" width="100%" height="100%" rx="0" ry="0" fill="white"/></svg>'),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><rect x="5" y="5" width="calc(100% - 10px)" height="calc(100% - 10px)" rx="21" ry="21" fill="white"/></svg>');
+  mask-composite: exclude;
+}
+
+.liquid_glass-cover {
+  backdrop-filter: blur(2px);
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: var(--liquid_glass-border-radius);
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.liquid_glass-sharp {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+
+  box-shadow: inset 1px 1px 0px 0px rgba(255, 255, 255, 0.5), inset -1px -1px 0px 0px rgba(255, 255, 255, 0.6);
+  border-radius: var(--liquid_glass-border-radius);
+}
+
+.liquid_glass-reflect {
+  position: absolute;
+  inset: 1px;
+  z-index: 2;
+
+  box-shadow: inset 2px 2px 6px 2px rgba(255, 255, 255, 0.2), inset -2px -2px 4px -1px rgba(255, 255, 255, 0.2);
+  border-radius: var(--liquid_glass-border-radius);
+}
+
+.icon {
+  z-index: 4;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
