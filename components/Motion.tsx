@@ -23,9 +23,9 @@ export const containerVariants = {
       filter: { duration: 1, timeConstant: 350, ease: [0.25, 0.3, 0.5, 1] },
       type: 'tween',
       duration: 0.6,
-      delayChildren: 0,
+      delayChildren: 0.1,
       //   staggerChildren: 0.12, // 每个子项之间的延迟时间
-      staggerChildren: 0.1, // 每个子项之间的延迟时间
+      staggerChildren: 0.18, // 每个子项之间的延迟时间
     },
   },
 }

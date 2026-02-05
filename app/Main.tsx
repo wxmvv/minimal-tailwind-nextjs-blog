@@ -209,8 +209,12 @@ export default function Home({ posts }) {
               style={{
                 transition:
                   btnHoveredIndex !== null
-                    ? 'opacity 0.4s ease, top 0.2s ease, left 0.3s ease, width 0.3s ease'
-                    : 'opacity 0.8s ease',
+                    ? 'opacity 0.5s ease, top 0.33s ease, left 0.6s ease, width 0.3s ease'
+                    : 'opacity 0.9s ease',
+                // transition:
+                //   btnHoveredIndex !== null
+                //     ? 'opacity 0.4s ease, top 0.2s ease, left 0.3s ease, width 0.3s ease'
+                //     : 'opacity 0.8s ease',
                 top:
                   lastHoveredIndex !== null ? liRefs.current[lastHoveredIndex]?.offsetTop : 'none',
                 left: lastHoveredIndex !== null ? liRefs.current[0]?.offsetLeft : 'none',
