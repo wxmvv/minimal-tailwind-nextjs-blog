@@ -25,7 +25,13 @@ export default function Projects() {
                 variants={itemVariants}
                 key={d.title + Math.random()} // 分配一个随机数给key 防止重复
               >
-                <Card title={d.title} description={d.description} imgSrc={d.imgSrc} href={d.href} tag={d.tag} />
+                <Card
+                  title={d.title}
+                  description={d.description}
+                  imgSrc={d.imgSrc}
+                  href={d.href}
+                  tag={d.tag}
+                />
               </motion.div>
             ))}
           </div>
