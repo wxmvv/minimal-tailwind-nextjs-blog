@@ -197,6 +197,11 @@ export default function Home({ posts }) {
 
           {/* MARK 这里是文章列表 */}
           <ul className="z-10 flex w-fit shrink-0 flex-col gap-2">
+            {/* <img
+              className="absolute"
+              src="http://localhost:3000/static/images/capacitor.png"
+              alt=""
+            /> */}
             {/* MARK 这里是hover背景动画块 */}
             <div
               ref={hoverBgRef}
