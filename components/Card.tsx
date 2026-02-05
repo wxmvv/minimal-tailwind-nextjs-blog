@@ -1,7 +1,7 @@
 import Image from './Image'
 import Link from './Link'
 
-const Card = ({ title, description, imgSrc, href }) => {
+const Card = ({ title, description, imgSrc, href, tag }) => {
   const renderImage = () => (
     <Image
       alt={title}
@@ -19,6 +19,17 @@ const Card = ({ title, description, imgSrc, href }) => {
             {renderImage()}
           </Link>
         )}
+        {/* 磨砂tag */}
+        {tag && (
+          <div className="liquid_glass-wrapper !absolute right-2 top-2 z-10 m-4 w-fit p-2 ">
+            <div className="z-20 font-semibold">{tag}</div>
+            <div className="liquid_glass-outer"></div>
+            <div className="liquid_glass-cover"></div>
+            <div className="liquid_glass-sharp"></div>
+            <div className="liquid_glass-reflect"></div>
+          </div>
+        )}
+
         <div className="flex h-56 flex-col gap-4 p-6">
           {title && (
             <h2 className="max-h-10 text-base font-bold leading-4 tracking-tight">

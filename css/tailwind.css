@@ -208,7 +208,7 @@ p {
   inset: 0;
   z-index: 2;
   border-radius: var(--liquid_glass-border-radius);
-  background: rgba(0, 0, 0, 0.12);
+  background: rgba(0, 0, 0, 0.06);
 }
 
 .liquid_glass-sharp {
