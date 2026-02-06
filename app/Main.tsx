@@ -115,7 +115,7 @@ export default function Home({ posts }) {
     <>
       <div>
         {/* MARK 这里是右侧预览与动画 */}
-        <div className="fixed left-1/2 top-0 h-screen w-full">
+        {/* <div className="fixed left-1/2 top-0 h-screen w-full">
           <div className="relative left-8 top-1/2 flex h-auto max-w-[484px] -translate-y-1/2 transform-gpu items-center justify-center">
             <AnimatePresence>
               {posts.slice(0, MAX_DISPLAY).map((post, index) => {
@@ -150,7 +150,7 @@ export default function Home({ posts }) {
               })}
             </AnimatePresence>
           </div>
-        </div>
+        </div> */}
 
         {/* MARK 这里是content */}
         <motion.div
@@ -202,6 +202,43 @@ export default function Home({ posts }) {
               src="http://localhost:3000/static/images/capacitor.png"
               alt=""
             /> */}
+            {/* MARK 这里是右侧预览与动画 */}
+            <div className="pointer-events-none sticky top-[50vh] h-0 w-full -translate-y-1/2 translate-x-[61%]  bg-slate-500">
+              <div className="relative left-8 top-1/2 flex h-auto max-w-[484px] -translate-y-1/2 transform-gpu items-center justify-center">
+                <AnimatePresence>
+                  {posts.slice(0, MAX_DISPLAY).map((post, index) => {
+                    const { slug, date, title, summary, tags, media } = post
+                    return (
+                      <motion.div
+                        className="absolute flex h-fit w-full flex-col items-center justify-start"
+                        key={'media' + index}
+                        initial={false}
+                        variants={{
+                          visible: {
+                            opacity: 1,
+                            filter: 'blur(0px)',
+                            // transform: 'perspective(1000px) rotateY(-10deg)',  3d翻转效果
+                            transform: 'none',
+                          },
+                          hidden: {
+                            opacity: 0,
+                            filter: 'blur(16px)',
+                            transform: 'translateY(16px)',
+                          },
+                        }}
+                        animate={index === btnHoveredIndex ? 'visible' : 'hidden'}
+                        transition={{
+                          type: 'tween',
+                          duration: 0.3,
+                        }}
+                      >
+                        <Media src={media} key={index} />
+                      </motion.div>
+                    )
+                  })}
+                </AnimatePresence>
+              </div>
+            </div>
             {/* MARK 这里是hover背景动画块 */}
             <div
               ref={hoverBgRef}
