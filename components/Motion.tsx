@@ -1,13 +1,13 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 
 export const MotionDiv = motion.div
 export const MotionP = motion.p
 export const MotionLi = motion.li
 
 // 列表container出现的动画
-export const containerVariants = {
+export const containerVariants: Variants = {
   hidden: {
     opacity: 0,
     filter: 'blur(8px)',
@@ -31,7 +31,7 @@ export const containerVariants = {
 }
 
 // 列表item出现的动画
-export const itemVariants = {
+export const itemVariants: Variants = {
   hidden: {
     opacity: 0,
     filter: 'blur(8px)',

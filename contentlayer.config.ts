@@ -110,6 +110,8 @@ export const Blog = defineDocumentType(() => ({
     media: { type: 'string' },
     onhomepage: { type: 'boolean', default: true },
     comments: { type: 'boolean', default: true },
+    categories: { type: 'list', of: { type: 'string' }, required: false },
+    update: { type: 'date', required: false },
   },
   computedFields: {
     ...computedFields,
