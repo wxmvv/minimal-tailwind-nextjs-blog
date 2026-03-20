@@ -1,13 +1,12 @@
 'use client'
 import projectsData from '@/data/projectsData'
 import Card from '@/components/Card'
-import { useState, useEffect } from 'react'
 import { useLang } from '@/components/Lang/index'
 import { motion } from 'framer-motion'
 import { containerVariants, itemVariants } from '@/components/Motion'
 
 export default function Projects() {
-  const { t, lang, resolvedLang } = useLang()
+  const { t } = useLang()
   return (
     <>
       <motion.div className="" variants={containerVariants} initial="hidden" animate="visible">
@@ -18,13 +17,9 @@ export default function Projects() {
           </h2>
         </motion.div>
         <div className="container py-12">
-          <div className="-m-4 flex flex-wrap">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
             {projectsData.map((d) => (
-              <motion.div
-                className="md max-w-[300px] p-4 md:w-1/2"
-                variants={itemVariants}
-                key={d.title + Math.random()} // 分配一个随机数给key 防止重复
-              >
+              <motion.div className="h-full" variants={itemVariants} key={d.title}>
                 <Card
                   title={d.title}
                   description={d.description}
