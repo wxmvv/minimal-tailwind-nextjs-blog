@@ -11,7 +11,6 @@ import { remarkAlert } from 'remark-github-blockquote-alert'
 import {
   remarkExtractFrontmatter,
   remarkCodeTitles,
-  remarkImgToJsx,
   extractTocHeadings,
 } from 'pliny/mdx-plugins/index.js'
 // Rehype packages
@@ -23,6 +22,7 @@ import rehypePrismPlus from 'rehype-prism-plus'
 import rehypePresetMinify from 'rehype-preset-minify'
 import siteMetadata from './data/siteMetadata'
 import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer.js'
+import remarkImgToJsxFixed from './remarkImgToJsxFixed'
 
 const root = process.cwd()
 const isProduction = process.env.NODE_ENV === 'production'
@@ -159,7 +159,7 @@ export default makeSource({
       remarkGfm,
       remarkCodeTitles,
       remarkMath,
-      remarkImgToJsx,
+      remarkImgToJsxFixed,
       remarkAlert,
     ],
     rehypePlugins: [

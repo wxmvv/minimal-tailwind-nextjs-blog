@@ -309,6 +309,7 @@ const Player = ({
     return [arr[rand], ...shufflePlaylist(arr.filter((_, i) => i !== rand))]
   }
 
+  // TODO 排序
   const sortCompare = (a, b) =>
     !sortTracks ? null : a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1
 
