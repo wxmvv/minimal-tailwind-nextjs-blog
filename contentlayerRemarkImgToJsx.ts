@@ -53,7 +53,7 @@ const getExtension = (url: string) => {
  * 处理本地图片文件，转换为 Next.js Image 组件
  * 添加了错误处理和 null 检查
  */
-export default function remarkImgToJsxFixed() {
+export default function remarkImgToJsx() {
   return (tree: Node) => {
     visit(
       tree,

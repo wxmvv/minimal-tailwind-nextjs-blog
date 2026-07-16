@@ -1,0 +1,15 @@
+# Dependencies
+node_modules
+.yarn
+
+# Build / generated output
+.next
+out
+.contentlayer
+public/feed.xml
+public/sitemap.xml
+public/robots.txt
+
+# Lockfiles & misc
+yarn.lock
+*.log
