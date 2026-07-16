@@ -92,22 +92,22 @@ const SimpleAudioPlayer = ({
   }
 
   return (
-    <div className="audio-player my-6 rounded-lg border border-gray-200 dark:border-gray-700">
+    <div className="audio-player my-6 overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700">
       <div className="audio-header border-b border-gray-200 bg-gray-50 px-4 py-3 dark:border-gray-700 dark:bg-gray-800">
-        <div className="flex items-center justify-between">
-          <div>
-            <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300">
+        <div className="flex items-center justify-between gap-3">
+          <div className="min-w-0 flex-1">
+            <h4 className="truncate text-sm font-medium text-gray-700 dark:text-gray-300">
               {title || alt || '音频播放'}
             </h4>
             {src && (
-              <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+              <p className="mt-1 truncate text-xs text-gray-500 dark:text-gray-400">
                 {src.split('/').pop()}
               </p>
             )}
           </div>
           <button
             onClick={handlePlayPause}
-            className="rounded-full bg-blue-100 p-2 text-blue-600 hover:bg-blue-200 dark:bg-blue-900 dark:text-blue-300 dark:hover:bg-blue-800"
+            className="shrink-0 rounded-full bg-blue-100 p-2 text-blue-600 hover:bg-blue-200 dark:bg-blue-900 dark:text-blue-300 dark:hover:bg-blue-800"
             aria-label={isPlaying ? '暂停' : '播放'}
           >
             {isPlaying ? (
