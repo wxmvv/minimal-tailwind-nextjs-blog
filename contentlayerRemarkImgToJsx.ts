@@ -1,4 +1,4 @@
-import { Parent, Node } from 'unist'
+import type { Parent, Node } from 'unist'
 import { visit } from 'unist-util-visit'
 import { sync as probeImageSize } from 'probe-image-size'
 import fs from 'fs'
