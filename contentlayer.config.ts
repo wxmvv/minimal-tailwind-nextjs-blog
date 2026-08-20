@@ -2,7 +2,6 @@ import { defineDocumentType, ComputedFields, makeSource } from 'contentlayer2/so
 import { writeFileSync } from 'fs'
 import readingTime from 'reading-time'
 import { slug } from 'github-slugger'
-import path from 'path'
 import { fromHtmlIsomorphic } from 'hast-util-from-html-isomorphic'
 // Remark packages
 import remarkGfm from 'remark-gfm'
@@ -17,7 +16,11 @@ import {
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeKatex from 'rehype-katex'
-import rehypeCitation from 'rehype-citation'
+// Citation support is currently disabled. To enable it:
+// 1. Run `pnpm add rehype-citation`.
+// 2. Import `path` from `path` and `rehypeCitation` from `rehype-citation` here.
+// 3. Add `[rehypeCitation, { path: path.join(root, 'data') }]` to `rehypePlugins` below.
+// 4. Put the `.bib` file in `data` and set `bibliography: your-file.bib` in the post frontmatter.
 import rehypePrismPlus from 'rehype-prism-plus'
 import rehypePresetMinify from 'rehype-preset-minify'
 import siteMetadata from './data/siteMetadata'
@@ -104,6 +107,7 @@ export const Blog = defineDocumentType(() => ({
     images: { type: 'json' },
     authors: { type: 'list', of: { type: 'string' } },
     layout: { type: 'string' },
+    // Used when citation support is enabled; see the setup notes near the rehype imports.
     bibliography: { type: 'string' },
     canonicalUrl: { type: 'string' },
     // media on homepage or banner
@@ -175,7 +179,7 @@ export default makeSource({
         },
       ],
       rehypeKatex,
-      [rehypeCitation, { path: path.join(root, 'data') }],
+      // When re-enabled: [rehypeCitation, { path: path.join(root, 'data') }],
       [rehypePrismPlus, { defaultLanguage: 'js', ignoreMissing: true }],
       rehypePresetMinify,
     ],

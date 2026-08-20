@@ -1,6 +1,5 @@
 # Dependencies
 node_modules
-.yarn
 
 # Build / generated output
 .next
@@ -11,5 +10,5 @@ public/sitemap.xml
 public/robots.txt
 
 # Lockfiles & misc
-yarn.lock
+pnpm-lock.yaml
 *.log

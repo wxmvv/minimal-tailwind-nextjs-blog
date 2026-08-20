@@ -7,19 +7,18 @@
 ## 开发
 
 ```bash
-yarn install
-yarn dev
+pnpm install
+pnpm dev
 ```
 
 ## 部署
 
 ```bash
-yarn build
+pnpm build
 ```
 
 ## 预览
 
-| Dark                                                                                              | Light                                                                                              |
-| ------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| Dark                                                                                                           | Light                                                                                                           |
+| -------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
 | ![](https://raw.githubusercontent.com/wxmvv/minimal-tailwind-nextjs-blog/refs/heads/main/screen_shot_dark.png) | ![](https://raw.githubusercontent.com/wxmvv/minimal-tailwind-nextjs-blog/refs/heads/main/screen_shot_light.png) |
-
