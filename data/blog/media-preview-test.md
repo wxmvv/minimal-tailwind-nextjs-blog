@@ -26,7 +26,7 @@ draft: false
 
 嵌入视频文件：
 
-![示例视频](/static/test.mp4)
+![示例视频](/static/video/test_video.mp4)
 
 ## 音频测试
 
