@@ -4,6 +4,10 @@
 
 基于[Tailwind Nextjs Starter Blog](https://github.com/timlrx/tailwind-nextjs-starter-blog)。
 
+该项目已归档，新的博客项目使用astro重构。
+
+[minimal-astro-blog](https://github.com/wxmvv/minimal-astro-blog)
+
 ## 开发
 
 ```bash
